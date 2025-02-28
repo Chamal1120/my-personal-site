@@ -15,9 +15,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body className="bg-black">
+      <body className="bg-ctp-crust text-ctp-crust-light max-lg items-center text-center">
         <Navbar/>
-        {children}</body>
+          <main>
+            {children}
+          </main>
+      </body>
     </html>
   );
 }
