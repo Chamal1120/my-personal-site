@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        sans: ["source-code-pro", ...fontFamily.sans],
       },
       colors: {
         /* Catppuccin Colors: 🌙 Mocha (Dark Mode) */
