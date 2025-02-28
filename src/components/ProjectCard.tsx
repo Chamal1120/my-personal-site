@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -17,12 +19,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div className="mx-auto max-w-2xl overflow-hidden bg-ctp-mantle shadow-md">
-      <div className="flex-col items-start justify-start md:flex gap-2">
+      <div className="flex-col items-start justify-start gap-2 md:flex">
         <div className="md:shrink-0">
-          <img
+          <Image
             className="hidden object-cover md:inline-flex md:h-auto md:w-full"
             src={image}
             alt={title}
+            width={1280}
+            height={720}
           />
         </div>
         <div className="flex flex-col items-start justify-start p-8">

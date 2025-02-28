@@ -5,6 +5,23 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        port: "",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "media2.dev.to",
+        port: "",
+        pathname: "**",
+      },
+    ],
+  },
+};
 
-export default config;
+export default nextConfig;

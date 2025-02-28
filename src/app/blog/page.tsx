@@ -18,14 +18,19 @@ const BlogPage = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("https://dev.to/api/articles?username=chamal1120");
+        const response = await fetch(
+          "https://dev.to/api/articles?username=chamal1120",
+        );
 
         if (!response.ok) {
           // If the response is not okay (status code 2xx), throw an error
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
+        const data: BlogPost[] = (await response.json()) as BlogPost[];
+        if (!Array.isArray(data)) {
+          throw new Error("Invalid data format");
+        }
         setPosts(data); // Update state with the fetched data
       } catch (error) {
         setError(`Error fetching blogs: ${(error as Error).message}`); // Handle errors by setting error state
@@ -33,13 +38,14 @@ const BlogPage = () => {
       }
     };
 
-    fetchBlogs(); // Call the async function immediately
+    fetchBlogs().catch(console.error); // Call the async function immediately
   }, []); // Empty dependency array ensures this runs once when the component mounts
 
   return (
     <section>
-      <h2 className="text-3xl text-bold py-36">Check out what I write.</h2>
-      {error && <p className="text-red-500">{error}</p>} {/* Display an error if there is */}
+      <h2 className="text-bold py-36 text-3xl">Check out what I write.&apos</h2>
+      {error && <p className="text-red-500">{error}</p>}{" "}
+      {/* Display an error if there is */}
       {posts.length > 0 ? (
         posts.map((post) => (
           <BlogPostCard
@@ -59,4 +65,3 @@ const BlogPage = () => {
 };
 
 export default BlogPage;
-

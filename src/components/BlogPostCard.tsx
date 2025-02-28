@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface BlogPostProps {
   title: string;
   image: string;
@@ -16,7 +18,7 @@ const BlogPostCard: React.FC<BlogPostProps> = ({
   return (
     <div className="max-w-2xl">
       <a href={url} target="_blank">
-        <img src={image} alt={title} />
+        <Image src={image} alt={title} width={1000} height={420} />
         <h3>{title}</h3>
         <p>{description}</p>
         <div>
