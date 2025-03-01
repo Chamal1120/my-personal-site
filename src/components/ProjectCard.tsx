@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="flex-col items-start justify-start gap-2 md:flex">
         <div className="md:shrink-0">
           <Image
-            className="hidden object-cover md:inline-flex md:h-auto md:w-full"
+            className="object-cover md:inline-flex"
             src={image}
             alt={title}
             width={1280}

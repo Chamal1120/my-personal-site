@@ -9,8 +9,8 @@ export default function ProjectsPage() {
         "A flutter app to decode the Sri Lankan NIC (National Identity Card) number.",
       technologies: "Flutter, GetX, Material 3, GitHub Actions",
       image: "https://raw.githubusercontent.com/Chamal1120/slnic-decoder/refs/heads/main/repo-assets/cover.webp",
-      sourceCodeLink: "https://github.com/your-repo",
-      previewLink: "https://github.com/your-repo/releases",
+      sourceCodeLink: "https://github.com/chamal1120/slnic-decoder",
+      previewLink: "https://github.com/chamal1120/releases",
     },
     {
       title: "Fully Serverless E-commerce App",

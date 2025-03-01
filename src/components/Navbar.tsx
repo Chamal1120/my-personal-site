@@ -23,19 +23,19 @@ const Navbar = () => {
       <ul
         className={`flex flex-row flex-wrap items-center justify-center gap-10 py-4 px-16 backdrop-blur-md ${isScrolled ? "border border-ctp-crust-light/20 bg-ctp-crust-dark/60 backdrop-blur-md" : "bg-transparent"} `}
       >
-        <li>
+        <li className="hover:underline">
           <Link href="/">Home</Link>
         </li>
-        <li>
+        <li className="hover:underline">
           <Link href="/projects">Projects</Link>
         </li>
-        <li>
+        <li className="hover:underline">
           <Link href="/blog">Blog</Link>
         </li>
-        <li>
+        <li className="hover:underline">
           <Link href="/education">Education</Link>
         </li>
-        <li>
+        <li className="hover:underline">
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
