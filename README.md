@@ -17,20 +17,20 @@
 
 ## Tech Stack
 
-- Next bootstrapped with T3 stack
-- Tailwind CSS framework
+- T3 stack to bootstrap Next.js
+- TailwindCSS framework for styling
 - Motion animation library
-- Prettier formatter
+- Prettier as a formatter
 - Pnpm for package management
-- Node for runtime
+- Node as runtime
 - Vercel for deployment
 
 ## Build Instructions
 
 #### Prerequisites
 
-- Node version 20 or above
-- Pnpm latest version
+- Node v20 or above
+- pnpm latest
 
 #### Steps
 
@@ -70,4 +70,4 @@ pnpm run build
 
 ## LICENSE
 
-This is open source and licnesed under **MIT LICENSE** and you can use for your own needs as you wish.
+This is open source and licensed under **MIT LICENSE** and you can use for your own needs as you wish.
