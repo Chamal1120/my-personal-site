@@ -18,7 +18,13 @@ const BlogPostCard: React.FC<BlogPostProps> = ({
   return (
     <div className="max-w-2xl py-10">
       <a href={url} target="_blank">
-        <Image src={image} alt={title} width={1000} height={420} />
+        <Image
+          src={image}
+          alt={title}
+          width={1000}
+          height={420}
+          layout="responsive"
+        />
         <h3 className="py-4 text-start text-lg font-semibold uppercase tracking-wide text-ctp-base-light">
           {title}
         </h3>
