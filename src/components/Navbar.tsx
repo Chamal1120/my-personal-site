@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import * as motion from "motion/react-client";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -15,6 +16,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Update isScrolled by listening to scrollY event
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -31,22 +33,30 @@ const Navbar = () => {
   return (
     <nav className="fixed left-1/2 -translate-x-1/2">
       <ul
-        className={`flex flex-row flex-wrap items-center justify-center gap-10 px-16 py-4 backdrop-blur-md ${isScrolled ? "border border-ctp-crust-light/20 bg-ctp-crust-dark/70 backdrop-blur-md" : "bg-transparent"} `}
+        className={`flex flex-row flex-wrap items-center justify-center gap-10 px-16 py-4 backdrop-blur-md ${isScrolled
+            ? "border border-ctp-crust-light/20 bg-ctp-crust-dark/70 backdrop-blur-md"
+            : "bg-transparent"
+          } `}
       >
         {navItems.map((item) => (
           <li key={item.path}>
             <Link href={item.path}>
-
               <span className="relative inline-block pb-2">
-              {item.name}
+                {item.name}
 
-                {/* Underline only under the text */}
-                <span
-                  className={`absolute bottom-0 left-0 h-[0.1rem] bg-ctp-lavender-dark transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-                    pathname === item.path ? "w-full" : "w-0"
-                  }`}
-                ></span>
-
+                {/* Motion-based underline that animates between items */}
+                {pathname === item.path && (
+                  <motion.span
+                    className="absolute bottom-0 left-0 h-[0.1rem] w-full bg-ctp-lavender-dark"
+                    layoutId="underline"
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 30,
+                      duration: 0.3,
+                    }}
+                  />
+                )}
               </span>
             </Link>
           </li>

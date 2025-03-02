@@ -15,11 +15,20 @@ export default function ProjectsPage() {
     {
       title: "Fully Serverless E-commerce App",
       description:
-        " A demo E-Commerce web app that fully runs on AWS serverless technologies",
+        " A demo E-Commerce web app that fully runs on AWS serverless technologies.",
       technologies: "React, Express, AWS Lambda, AWS S3, AWS DynamoDB, AWS Codebuild and AWS CodePipeline, GitHub",
       image: "https://raw.githubusercontent.com/chamal1120/book-store/refs/heads/main/github-assets/preview.webp",
-      sourceCodeLink: "https://github.com/your-portfolio",
-      previewLink: "https://your-portfolio.com",
+      sourceCodeLink: "https://github.com/Chamal1120/book-store",
+      previewLink: "http://book-store-skyops-terraform-front.s3-website-us-east-1.amazonaws.com",
+    },
+    {
+      title: "Notes App with K8s and a Loadbalancer",
+      description:
+        "A Flask Notes taking application deployed through a Kubernetes  cluster and a Loadbalancer.",
+      technologies: "Flask, K8s, Docker, Git, GitHub Actions",
+      image: "https://raw.githubusercontent.com/Chamal1120/flask-notes-app/refs/heads/main/previews/preview1.webp",
+      sourceCodeLink: "https://github.com/Chamal1120/flask-notes-app",
+      previewLink: "N/A",
     },
     {
       title: "Personal Web",
@@ -28,7 +37,16 @@ export default function ProjectsPage() {
       technologies: "Next.js, T3, Tailwind CSS, TypeScript, Catppuccin",
       image: "https://raw.githubusercontent.com/Chamal1120/my-personal-site/refs/heads/main/repo-assets/preview.webp",
       sourceCodeLink: "https://github.com/Chamal1120/my-personal-site",
-      previewLink: "https://your-portfolio.com",
+      previewLink: "https://chamal1120.vercel.app",
+    },
+    {
+      title: "My Linux Dots",
+      description:
+        "Dotfiles in my current linux installations.",
+      technologies: "Git, Bash, Grep, Catppuccin",
+      image: "https://raw.githubusercontent.com/Chamal1120/dotfiles/refs/heads/main/previews/preview2.webp",
+      sourceCodeLink: "https://github.com/Chamal1120/my-personal-site",
+      previewLink: "https://chamal1120.vercel.app",
     },
   ];
 
