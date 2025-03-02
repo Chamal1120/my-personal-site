@@ -18,7 +18,7 @@ const EducationPage = () => {
 
   return (
     <section>
-      <h2 className="text-3xl py-10">Things I&apos;ve learned.</h2>
+      <h2 className="font-bold text-3xl py-10">Things I&apos;ve learned.</h2>
       {education.map((educationItem, index) => (
         <EducationCard key={index} {...educationItem} />
       ))}

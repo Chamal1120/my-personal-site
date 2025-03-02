@@ -26,8 +26,8 @@ export default function ProjectsPage() {
       description:
         " This website. An SPA with SSR built with T3 stack.",
       technologies: "Next.js, T3, Tailwind CSS, TypeScript, Catppuccin",
-      image: "https://raw.githubusercontent.com/chamal1120/book-store/refs/heads/main/github-assets/preview.webp",
-      sourceCodeLink: "https://github.com/your-portfolio",
+      image: "https://raw.githubusercontent.com/Chamal1120/my-personal-site/refs/heads/main/repo-assets/preview.webp",
+      sourceCodeLink: "https://github.com/Chamal1120/my-personal-site",
       previewLink: "https://your-portfolio.com",
     },
   ];

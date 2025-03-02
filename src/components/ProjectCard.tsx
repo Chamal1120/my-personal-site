@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   previewLink,
 }) => {
   return (
-    <div className="mx-auto max-w-2xl overflow-hidden bg-ctp-mantle shadow-md">
+    <div className="mx-auto max-w-2xl overflow-hidden bg-transparent shadow-md">
       <div className="flex-col items-start justify-start gap-2 md:flex">
         <div className="md:shrink-0">
           <Image
@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             height={720}
           />
         </div>
-        <div className="flex flex-col items-start justify-start p-8">
+        <div className="flex flex-col items-start justify-start py-6">
           <div className="text-lg font-semibold uppercase tracking-wide text-ctp-base-light">
             {title}
           </div>
