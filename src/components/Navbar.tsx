@@ -36,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="hidden lg:flex fixed left-1/2 top-0 z-50 -translate-x-1/2 pt-5">
+    <nav className="fixed left-1/2 top-0 z-50 hidden -translate-x-1/2 pt-5 lg:flex">
       <div
         className={`py-2 transition-[background-color] duration-200 lg:px-8 xl:px-16 ${
           isScrolled
