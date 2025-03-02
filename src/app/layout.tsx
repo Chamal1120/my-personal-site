@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-
   return (
     <html lang="en">
       <head>
@@ -24,13 +23,12 @@ export default function RootLayout({
 
       <body className="font-source-code-pro flex min-h-screen flex-col bg-ctp-crust text-center text-ctp-crust-light">
         <div className="relative py-8">
-          <Navbar/>
+          <Navbar />
         </div>
         <main className="flex flex-grow flex-col items-center justify-center overflow-y-auto pt-20">
           {children}
         </main>
       </body>
-
     </html>
   );
 }

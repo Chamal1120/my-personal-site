@@ -1,7 +1,6 @@
 import EducationCard from "~/components/EducationCard"; // Import EducationCard
 
 const EducationPage = () => {
-
   // List of educationInfo
   const education = [
     {
@@ -18,7 +17,7 @@ const EducationPage = () => {
 
   return (
     <section>
-      <h2 className="font-bold text-3xl py-10">Things I&apos;ve learned.</h2>
+      <h2 className="py-10 text-3xl font-bold">Things I&apos;ve learned.</h2>
       {education.map((educationItem, index) => (
         <EducationCard key={index} {...educationItem} />
       ))}

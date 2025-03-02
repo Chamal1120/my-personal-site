@@ -16,7 +16,7 @@ const EducationCard: React.FC<EducationProps> = ({
       <h3 className="text-start"> {course} </h3>
       <h4 className="text-start"> {institution} </h4>
       <p className="text-start"> {duration} </p>
-      {link? <p className="text-start"> {link} </p> : null}
+      {link ? <p className="text-start"> {link} </p> : null}
     </div>
   );
 };
