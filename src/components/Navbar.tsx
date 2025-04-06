@@ -38,20 +38,20 @@ const Navbar = () => {
   return (
     <nav className="fixed left-1/2 top-0 z-50 hidden -translate-x-1/2 pt-5 lg:flex">
       <motion.div
-          initial={{ opacity: 0.3, y: -200 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1.2,
+        initial={{ opacity: 0.3, y: -200 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1.2,
+          delay: 2,
+          y: {
+            type: "spring",
+            stiffness: 50,
+            damping: 8,
+            mass: 0.6,
+            bounce: 0.5,
             delay: 2,
-            y: {
-              type: "spring",
-              stiffness: 50,
-              damping: 8,
-              mass: 0.6,
-              bounce: 0.5,
-              delay: 2,
-            },
-          }}
+          },
+        }}
         className={`py-2 transition-[background-color] duration-200 lg:px-8 xl:px-16 ${
           isScrolled
             ? "border border-ctp-crust-light/20 bg-ctp-crust-dark/70 backdrop-blur-md"
