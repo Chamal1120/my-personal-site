@@ -27,7 +27,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             alt={title}
             width={1280}
             height={720}
-            layout="responsive"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority
           />
         </div>
         <div className="flex flex-col items-start justify-start py-6">
