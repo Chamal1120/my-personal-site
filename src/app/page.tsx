@@ -54,7 +54,7 @@ export default function HomePage() {
           transition={{
             duration: 2,
             delay: 3,
-            scale: { type: "spring", visualDuration: 0.8, bounce: 0.4 },
+            scale: { type: "spring", bounce: 0.4 },
           }}
           className="pt-12 text-[0.6rem] italic underline"
         >
