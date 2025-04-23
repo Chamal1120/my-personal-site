@@ -1,4 +1,7 @@
 name: Lint Check
+permissions:
+  contents: read
+  pull_request: write
 on: [pull_request]
 
 jobs:
