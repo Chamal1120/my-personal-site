@@ -1,11 +1,12 @@
 "use client";
 // import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 
 export default function HomePage() {
   return (
-    <section className="flex flex-grow -translate-y-20 flex-col items-center justify-center">
-      <motion.div>
+    <section className="flex flex-1 flex-col items-center justify-between">
+      <motion.div className="flex flex-1 flex-col items-center justify-center">
         <motion.div
           initial={{
             opacity: 0,
@@ -48,18 +49,43 @@ export default function HomePage() {
           {" "}
           Welcome to my space on the internet!{" "}
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 2,
-            delay: 3,
-            scale: { type: "spring", bounce: 0.4 },
-          }}
-          className="pt-12 text-[0.6rem] italic underline"
-        >
-          NOTE: This site is under heavy construction
-        </motion.p>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 2,
+          delay: 2,
+          scale: { type: "spring", bounce: 0.4 },
+        }}
+        className="flex flex-col py-12"
+      >
+        <div className="flex flex-row items-center justify-center pt-6">
+          <a
+            className="pr-5 hover:scale-105 active:scale-95"
+            href="https://ctp-webr.ing/Chamal1120/previous"
+          >
+            &larr;
+          </a>
+          <p>Catppuccin</p>
+          <a href="https://ctp-webr.ing/">
+            <div className="flex px-2 flex-col items-center justify-center">
+              <Image
+                src="/catppuccin_icon.png"
+                width="30"
+                height="30"
+                alt="catppuccin-icon"
+              ></Image>
+            </div>
+          </a>
+          <p>Webring</p>
+          <a
+            className="pl-5 hover:scale-105 active:scale-95"
+            href="https://ctp-webr.ing/Chamal1120/next"
+          >
+            &rarr;
+          </a>
+        </div>
       </motion.div>
     </section>
   );
