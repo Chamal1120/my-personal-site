@@ -42,14 +42,14 @@ const Navbar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{
           duration: 1.2,
-          delay: 2,
+          delay: 0.8,
           y: {
             type: "spring",
             stiffness: 50,
             damping: 8,
             mass: 0.6,
             bounce: 0.5,
-            delay: 2,
+            delay: 0.8,
           },
         }}
         className={`py-2 transition-[background-color] duration-200 lg:px-8 xl:px-16 ${
