@@ -4,6 +4,16 @@ export default function ProjectsPage() {
   // List of projects
   const projects = [
     {
+      title: "CV Submission Automator",
+      description:
+        "A full CV processing pipeline from taking the CV from the candidate to information extraction and sending them to the recruiter and informing back to the candidate about the status of it.",
+      technologies: "Python, AWS Lambda Functions, Sendgrid, AWS SES, AWS Codebuild and Codepipeline, Terraform, Github Actions, Google Sheets API, React",
+      image:
+        "https://raw.githubusercontent.com/Chamal1120/cv-submission-automator/refs/heads/main/previews/preview_01.webp",
+      sourceCodeLink: "https://github.com/Chamal1120/cv-submission-automator",
+      previewLink: "N/A",
+    },
+    {
       title: "SLNIC Decoder",
       description:
         "A flutter app to decode the Sri Lankan NIC (National Identity Card) number.",
@@ -11,7 +21,7 @@ export default function ProjectsPage() {
       image:
         "https://raw.githubusercontent.com/Chamal1120/slnic-decoder/refs/heads/main/repo-assets/cover.webp",
       sourceCodeLink: "https://github.com/chamal1120/slnic-decoder",
-      previewLink: "https://github.com/chamal1120/releases",
+      previewLink: "N/A",
     },
     {
       title: "Fully Serverless E-commerce App",
@@ -23,7 +33,7 @@ export default function ProjectsPage() {
         "https://raw.githubusercontent.com/chamal1120/book-store/refs/heads/main/github-assets/preview.webp",
       sourceCodeLink: "https://github.com/Chamal1120/book-store",
       previewLink:
-        "http://book-store-skyops-terraform-front.s3-website-us-east-1.amazonaws.com",
+        "N/A",
     },
     {
       title: "Notes App with K8s and a Loadbalancer",
@@ -49,9 +59,9 @@ export default function ProjectsPage() {
       description: "Dotfiles in my current linux installations.",
       technologies: "Git, Bash, Grep, Catppuccin",
       image:
-        "https://raw.githubusercontent.com/Chamal1120/dotfiles/refs/heads/main/previews/preview2.webp",
-      sourceCodeLink: "https://github.com/Chamal1120/my-personal-site",
-      previewLink: "https://chamal1120.vercel.app",
+        "https://raw.githubusercontent.com/Chamal1120/dotfiles/refs/heads/main/previews/2025-07-31-180431_hyprshot.webp",
+      sourceCodeLink: "https://github.com/Chamal1120/dotfies",
+      previewLink: "N/A",
     },
   ];
 
