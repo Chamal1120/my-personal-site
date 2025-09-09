@@ -2,13 +2,13 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 
-let introp1: string =
+const introp1 =
   "Welcome to my site. I like programming, watching movies and tv series, playing video games and writing random things about tech and entertainment.";
-let introp2: string =
+const introp2 =
   "The reason I love programming is becuase it allows me to  understand the abstractions behind software and operating systems and to create little things myself which I don't want to pay for or get busted sailing through the high seas! (iykyk).";
-let introp3: string =
+const introp3 =
   "I use GNU/Linux as my daily driver and mostly consume terminal emulator based workflows for my developer needs. if you're interested in my workflows, take a look at my ";
-let introp4: string =
+const introp4 =
   "Oh btw, I recently started a YouTube channel to yap about terminals and whatnot. Check it out ";
 
 export default function HomePage() {
@@ -26,7 +26,7 @@ export default function HomePage() {
         <br />
         <motion.p className="max-w-3xl cursor-default text-justify text-lg">
           <span>
-            Hi, I'm <span className="font-bold">Chamal, </span>
+            Hi, I&apos;m <span className="font-bold">Chamal, </span>
           </span>
           {introp1}
         </motion.p>

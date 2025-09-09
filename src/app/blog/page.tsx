@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import BlogPostCard from "~/components/BlogPostCard";
 
-let blogOwner: string = "chamal1120";
+const blogOwner = "chamal1120";
 
 // Shape of the BlogPost
 interface BlogPost {
