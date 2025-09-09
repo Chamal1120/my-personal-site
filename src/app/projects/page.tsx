@@ -11,7 +11,7 @@ export default function ProjectsPage() {
       image:
         "https://raw.githubusercontent.com/Chamal1120/cv-submission-automator/refs/heads/main/previews/preview_01.webp",
       sourceCodeLink: "https://github.com/Chamal1120/cv-submission-automator",
-      previewLink: "N/A",
+      previewLink: null,
     },
     {
       title: "SLNIC Decoder",
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       image:
         "https://raw.githubusercontent.com/Chamal1120/slnic-decoder/refs/heads/main/repo-assets/cover.webp",
       sourceCodeLink: "https://github.com/chamal1120/slnic-decoder",
-      previewLink: "N/A",
+      previewLink: null,
     },
     {
       title: "Fully Serverless E-commerce App",
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
         "https://raw.githubusercontent.com/chamal1120/book-store/refs/heads/main/github-assets/preview.webp",
       sourceCodeLink: "https://github.com/Chamal1120/book-store",
       previewLink:
-        "N/A",
+        null,
     },
     {
       title: "Notes App with K8s and a Loadbalancer",
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
       image:
         "https://raw.githubusercontent.com/Chamal1120/flask-notes-app/refs/heads/main/previews/preview1.webp",
       sourceCodeLink: "https://github.com/Chamal1120/flask-notes-app",
-      previewLink: "N/A",
+      previewLink: null,
     },
     {
       title: "Personal Web",
@@ -52,16 +52,16 @@ export default function ProjectsPage() {
       image:
         "https://raw.githubusercontent.com/Chamal1120/my-personal-site/refs/heads/main/repo-assets/preview.webp",
       sourceCodeLink: "https://github.com/Chamal1120/my-personal-site",
-      previewLink: "https://chamal1120.vercel.app",
+      previewLink: null,
     },
     {
       title: "My Linux Dots",
       description: "Dotfiles in my current linux installations.",
       technologies: "Git, Bash, Grep, Catppuccin",
       image:
-        "https://raw.githubusercontent.com/Chamal1120/dotfiles/refs/heads/main/previews/2025-07-31-180431_hyprshot.webp",
+        "https://raw.githubusercontent.com/Chamal1120/dotfiles/refs/heads/main/.github/previews/2025-07-31-180431_hyprshot.webp",
       sourceCodeLink: "https://github.com/Chamal1120/dotfies",
-      previewLink: "N/A",
+      previewLink: null,
     },
   ];
 

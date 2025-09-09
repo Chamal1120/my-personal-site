@@ -6,7 +6,7 @@ interface ProjectCardProps {
   technologies: string;
   image: string;
   sourceCodeLink: string;
-  previewLink: string;
+  previewLink: string | null | undefined;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -50,14 +50,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             >
               Source Code
             </a>
-            <a
-              href={previewLink}
-              className="mt-1 block text-left text-sm font-medium leading-tight text-ctp-crust-light hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live version
-            </a>
+            {previewLink !== null ?
+              <a
+                href={previewLink}
+                className="mt-1 block text-left text-sm font-medium leading-tight text-ctp-crust-light hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Preview
+              </a> : <a> </a>
+            }
           </div>
         </div>
       </div>

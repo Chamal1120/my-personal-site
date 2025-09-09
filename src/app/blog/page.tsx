@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import BlogPostCard from "~/components/BlogPostCard";
 
+let blogOwner: string = "chamal1120";
+
 // Shape of the BlogPost
 interface BlogPost {
   id: number;
@@ -23,7 +25,7 @@ const BlogPage = () => {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(
-          "https://dev.to/api/articles?username=chamal1120",
+          `https://dev.to/api/articles?username=${blogOwner}`,
         );
 
         if (!response.ok) {
@@ -37,7 +39,7 @@ const BlogPage = () => {
         }
         setPosts(data); // Update BlogPosts variable
       } catch (error) {
-        setError(`Error fetching blogs: ${(error as Error).message}`); // Update Error if there is
+        setError(`Error fetching blogs: ${(error as Error).message}`);
         console.error("Error fetching blogs:", error);
       }
     };
