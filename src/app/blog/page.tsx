@@ -48,7 +48,7 @@ const BlogPage = () => {
   }, []);
 
   return (
-    <section>
+    <section className="px-8">
       <h2 className="py-36 text-3xl font-bold">Things I&apos;ve written.</h2>
       {error && <p className="text-red-500">{error}</p>}{" "}
       {/* Display an error if there is */}

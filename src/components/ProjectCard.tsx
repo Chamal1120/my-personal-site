@@ -35,21 +35,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="text-lg font-semibold uppercase tracking-wide text-ctp-base-light">
             {title}
           </div>
-          <p className="mt-2 text-justify text-sm text-ctp-base-light">
+          <p className="my-2 text-justify text-lg text-ctp-base-light">
             {description}
           </p>
-          <p className="mt-2 text-justify text-[0.8rem] text-ctp-base-light">
-            <span className="font-bold">Technologies:</span> {technologies}
+          <p className="my-2 text-justify text-sm text-ctp-base-light">
+            <span className="font-bold">Stack:</span> {technologies}
           </p>
-          <div className="flex flex-row gap-4">
-            <a
-              href={sourceCodeLink}
-              className="mt-1 block text-left text-sm font-medium leading-tight text-ctp-crust-light hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="flex flex-row gap-4 py-2">
+            <button
+              className="bg-neutral-100 text-ctp-crust-dark"
             >
-              Source Code
-            </a>
+              <a
+                href={sourceCodeLink}
+                className="m-3 block text-left text-lg font-medium leading-tight hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Source Code
+              </a>
+            </button>
             {previewLink !== null ?
               <a
                 href={previewLink}

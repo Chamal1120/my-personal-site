@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["source-code-pro", ...fontFamily.sans],
+        sans: ['var(--font-space-mono)', 'monospace'],
       },
       colors: {
         /* Catppuccin Colors: 🌙 Mocha (Dark Mode) */
