@@ -21,7 +21,7 @@ export default function IntroVideo() {
       <video
         ref={videoRef}
         preload="none"
-        controls
+//        controls
         poster="/images/intro-thumbnail.webp"
         width="100%"
         style={{ borderRadius: "0px", background: "#000" }}
