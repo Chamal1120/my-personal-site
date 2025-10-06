@@ -1,11 +1,11 @@
-"use client"; // Enforce to render on client side
+"use client";
 
 import { useState, useEffect } from "react";
 import BlogPostCard from "~/components/BlogPostCard";
 
 const blogOwner = "chamal1120";
 
-// Shape of the BlogPost
+// Interface for the blogpost
 interface BlogPost {
   id: number;
   title: string;
@@ -15,12 +15,12 @@ interface BlogPost {
   tags: string;
 }
 
+// BlogPost component: fetches blogs from dev.to api and render inside the html
+// block
 const BlogPage = () => {
-  // Store the BlogPosts and errors
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetches the BlogPost list and update state variables
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -29,7 +29,6 @@ const BlogPage = () => {
         );
 
         if (!response.ok) {
-          // If the response is not okay (status code 4xx), throw an error
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
@@ -37,7 +36,7 @@ const BlogPage = () => {
         if (!Array.isArray(data)) {
           throw new Error("Invalid data format");
         }
-        setPosts(data); // Update BlogPosts variable
+        setPosts(data);
       } catch (error) {
         setError(`Error fetching blogs: ${(error as Error).message}`);
         console.error("Error fetching blogs:", error);
@@ -48,10 +47,9 @@ const BlogPage = () => {
   }, []);
 
   return (
-    <section className="px-8">
-      <h2 className="py-36 text-3xl font-bold">Things I&apos;ve written.</h2>
+    <section className="pt-4 px-8 flex-grow">
+      <div className="flex flex-row flex-wrap">
       {error && <p className="text-red-500">{error}</p>}{" "}
-      {/* Display an error if there is */}
       {posts.length > 0 ? (
         posts.map((post) => (
           <BlogPostCard
@@ -87,6 +85,7 @@ const BlogPage = () => {
           <span className="sr-only">Loading...</span>
         </div>
       )}
+      </div>
     </section>
   );
 };

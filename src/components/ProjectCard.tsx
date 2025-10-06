@@ -4,7 +4,6 @@ interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string;
-  image: string;
   sourceCodeLink: string;
   previewLink: string | null | undefined;
 }
@@ -13,25 +12,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   technologies,
-  image,
   sourceCodeLink,
   previewLink,
 }) => {
   return (
-    <div className="mx-auto max-w-2xl overflow-hidden bg-transparent shadow-md">
+    <div className="mx-auto w-full lg:w-[calc(50%-1rem)] overflow-hidden shadow-md bg-ctp-lavender-dark/5 p-4">
       <div className="flex-col items-start justify-start gap-2 md:flex">
         <div className="md:shrink-0">
-          <Image
-            className="object-cover md:inline-flex"
-            src={image}
-            alt={title}
-            width={1280}
-            height={720}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority
-          />
         </div>
-        <div className="flex flex-col items-start justify-start py-6">
+        <div className="flex flex-col items-start justify-start">
           <div className="text-lg font-semibold uppercase tracking-wide text-ctp-base-light">
             {title}
           </div>
@@ -41,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <p className="my-2 text-justify text-sm text-ctp-base-light">
             <span className="font-bold">Stack:</span> {technologies}
           </p>
-          <div className="flex flex-row gap-4 py-2">
+          <div className="flex flex-row gap-4 pt-2">
             <button
               className="bg-neutral-100 text-ctp-crust-dark"
             >

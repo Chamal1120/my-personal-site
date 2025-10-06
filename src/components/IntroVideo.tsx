@@ -1,6 +1,7 @@
-"use client";
+'use client'
 import { useState, useRef } from "react";
 
+// IntroVideo Component: Renders a video ref to intro video
 export default function IntroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,7 +18,7 @@ export default function IntroVideo() {
   }
 
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+    <div style={{ maxWidth: "600px", margin: "0 auto" }}>
       <video
         ref={videoRef}
         preload="none"
@@ -28,7 +29,7 @@ export default function IntroVideo() {
         onClick={handleClick}
       >
         <source src="/videos/intro.mp4" type="video/mp4" />
-        Your browser does not support HTML5 video.
+        Damn bro!, Your browser is so old that it doesn't even know HTML5.
       </video>
     </div>
   );
