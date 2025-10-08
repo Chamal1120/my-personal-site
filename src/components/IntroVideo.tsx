@@ -29,7 +29,7 @@ export default function IntroVideo() {
         onClick={handleClick}
       >
         <source src="/videos/intro.mp4" type="video/mp4" />
-        Damn bro!, Your browser is so old that it doesn't even know HTML5.
+        {"Damn bro!, Your browser is so old that it doesn't even know HTML5."}
       </video>
     </div>
   );

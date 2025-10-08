@@ -13,13 +13,13 @@ export default function HomePage() {
         <div className="max-w-100"></div>
         <div className="text-justify sm:mx-10">
           <p>
-            Hi, I'm <span className="font-bold">Chamal Randika</span>, a
+            {`Hi, I'm `}<span className="font-bold">Chamal Randika</span>{`, a
             hobbyist software engineer, writer, pc builds enthusiast, gamer and
-            a keyboard nerd. I goes by the name Chamal1120 online.
+            a keyboard nerd. I goes by the name Chamal1120 online.`}
           </p>
           <br />
           <p>
-            I'm interested in systems engineering, web dev, game dev, unix and ai.
+            {`I'm interested in systems engineering, web dev, game dev, unix and ai.`}
           </p>
           <br />
           <button
@@ -30,7 +30,7 @@ export default function HomePage() {
             }
             onClick={() => setShowStory(!showStory)}
           >
-            Read my full story (it's long, so don't if you don't have time.)
+            {`Read my full story (it's long, so don't if you don't have time.)`}
           </button>
           <div className={showStory ? "" : "hidden"}>
             <MyStory />
@@ -43,7 +43,7 @@ export default function HomePage() {
             }
             onClick={() => setShowStory(!showStory)}
           >
-            Close Story
+            {`Close Story`}
           </button>
         </div>
       </div>
