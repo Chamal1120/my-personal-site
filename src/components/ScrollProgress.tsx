@@ -26,9 +26,9 @@ export default function ScrollProgress() {
   }, []);
 
   return (
-    <div className="h-40 bg-transparent flex flex-col justify-end mb-2">
+    <div className="mb-2 flex h-40 flex-col justify-end bg-transparent">
       <div
-        className="bg-ctp-lavender-dark w-full transition-all"
+        className="w-full bg-ctp-lavender-dark transition-all"
         style={{
           height: `${scrollPercent}%`,
           maxHeight: "100%",

@@ -10,28 +10,31 @@ export default function MobileView({
 }: {
   children: React.ReactNode;
 }) {
-  const [showNav, setShowNav] = useState(false); 
+  const [showNav, setShowNav] = useState(false);
   return (
     <>
-      <div className="flex h-screen flex-col sm:hidden overflow-hidden">
-          <div className="flex flex-row justify-between p-2">
-            <div className="">
+      <div className="flex h-screen flex-col overflow-hidden sm:hidden">
+        <div className="flex flex-row justify-between p-2">
+          <div className="">
             <Link href="/">
               <p className="text-2xl font-bold">Chamal1120</p>
             </Link>
-            </div>
-            <div className="">
-            <HamburgerButton showNav={showNav} setShowNav={setShowNav}/>
-            </div>
           </div>
-        <div className="flex flex-grow overflow-y-auto flex-col items-center justify-center">
+          <div className="">
+            <HamburgerButton showNav={showNav} setShowNav={setShowNav} />
+          </div>
+        </div>
+        <div className="flex flex-grow flex-col items-center justify-center overflow-y-auto">
           <main className="m-2 flex-grow overflow-y-auto bg-ctp-base-dark">
             {children}
           </main>
           <Footer />
         </div>
-        <div className={`pb-2 transition-all duration-500 ease-in-out ${showNav ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 overflow-hidden"}`} style={{height: !showNav ? "0rem": "12rem"}}>
-          <Navbar showNav={showNav} setShowNav={setShowNav}/>
+        <div
+          className={`pb-2 transition-all duration-500 ease-in-out ${showNav ? "translate-y-0 opacity-100" : "translate-y-full overflow-hidden opacity-0"}`}
+          style={{ height: !showNav ? "0rem" : "12rem" }}
+        >
+          <Navbar showNav={showNav} setShowNav={setShowNav} />
         </div>
       </div>
     </>

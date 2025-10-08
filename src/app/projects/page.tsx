@@ -32,14 +32,15 @@ export default function ProjectsPage() {
       description:
         "An installable all-in-one fix package to get wifi, bluetooth and thermals working in GNU/Linux.",
       technologies: "gtk3-rs, libappindicator, modprobe, cargo",
-      sourceCodeLink: "https://github.com/Chamal1120/macbookpro-12-1-linux-fix-files",
+      sourceCodeLink:
+        "https://github.com/Chamal1120/macbookpro-12-1-linux-fix-files",
       previewLink: null,
     },
   ];
 
   return (
     <div>
-      <section className="flex flex-row flex-wrap gap-4 pt-4 px-4">
+      <section className="flex flex-row flex-wrap gap-4 px-4 pt-4">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}

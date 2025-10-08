@@ -1,18 +1,18 @@
 type NavProps = {
-  showNav: boolean,
+  showNav: boolean;
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
-export default function HamburgerButton({showNav, setShowNav}: NavProps) {
+export default function HamburgerButton({ showNav, setShowNav }: NavProps) {
   return (
     <button
       onClick={() => setShowNav(!showNav)}
-      className="relative z-50 flex h-10 w-10 flex-col items-center justify-center space-y-1 group"
+      className="group relative z-50 flex h-10 w-10 flex-col items-center justify-center space-y-1"
       aria-label="Toggle Navigation"
     >
       {/* Line 1 */}
       <span
-        className={`block h-0.5 w-6 bg-ctp-crust-light transform transition-all duration-300 ${
+        className={`block h-0.5 w-6 transform bg-ctp-crust-light transition-all duration-300 ${
           showNav ? "translate-y-1.5 rotate-45" : ""
         }`}
       ></span>
@@ -26,11 +26,10 @@ export default function HamburgerButton({showNav, setShowNav}: NavProps) {
 
       {/* Line 3 */}
       <span
-        className={`block h-0.5 w-6 bg-ctp-crust-light transform transition-all duration-300 ${
+        className={`block h-0.5 w-6 transform bg-ctp-crust-light transition-all duration-300 ${
           showNav ? "-translate-y-1.5 -rotate-45" : ""
         }`}
       ></span>
     </button>
   );
 }
-

@@ -47,8 +47,8 @@ const BlogPage = () => {
   }, []);
 
   return (
-    <section className="pt-4 px-8 flex-grow">
-      <div className="flex flex-grow flex-wrap w-full">
+    <section className="flex-grow px-8 pt-4">
+      <div className="flex w-full flex-grow flex-wrap">
         {error && <p className="text-red-500">{error}</p>}{" "}
         {posts.length > 0 ? (
           posts.map((post) => (
@@ -64,7 +64,7 @@ const BlogPage = () => {
         ) : (
           <div
             role="status"
-            className="item-center flex min-h-screen w-full justify-center flex-grow"
+            className="item-center flex min-h-screen w-full flex-grow justify-center"
           >
             <svg
               aria-hidden="true"

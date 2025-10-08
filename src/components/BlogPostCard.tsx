@@ -16,14 +16,9 @@ const BlogPostCard: React.FC<BlogPostProps> = ({
   tags,
 }) => {
   return (
-    <div className="w-full lg:w-[calc(50%-1rem)] py-10 px-5">
+    <div className="w-full px-5 py-10 lg:w-[calc(50%-1rem)]">
       <a href={url} target="_blank">
-        <Image
-          src={image}
-          alt={title}
-          width={1000}
-          height={420}
-        />
+        <Image src={image} alt={title} width={1000} height={420} />
         <h3 className="py-4 text-start text-lg font-semibold uppercase tracking-wide text-ctp-base-light">
           {title}
         </h3>

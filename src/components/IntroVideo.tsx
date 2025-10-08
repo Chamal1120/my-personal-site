@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useRef } from "react";
 
 // IntroVideo Component: Renders a video ref to intro video
@@ -15,14 +15,14 @@ export default function IntroVideo() {
       void videoRef.current.play();
     }
     setIsPlaying(!isPlaying);
-  }
+  };
 
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto" }}>
       <video
         ref={videoRef}
         preload="none"
-//        controls
+        //        controls
         poster="/images/intro-thumbnail.webp"
         width="100%"
         style={{ borderRadius: "0px", background: "#000" }}
@@ -34,4 +34,3 @@ export default function IntroVideo() {
     </div>
   );
 }
-

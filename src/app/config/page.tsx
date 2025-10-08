@@ -1,10 +1,10 @@
 export default function ConfigPage() {
   return (
     <>
-      <div className="text-left p-4 flex flex-col gap-5">
+      <div className="flex flex-col gap-5 p-4 text-left">
         <div>
           <h2 className="text-2xl font-bold text-ctp-crust-light/90">
-            {`&gt;&gt;  Linux Box:`}
+            {`>>  Linux Box:`}
           </h2>
           <ul>
             <li>{`OS - Arch Linux (Vanilla)`}</li>
@@ -16,7 +16,7 @@ export default function ConfigPage() {
         </div>
         <div>
           <h2 className="text-2xl font-bold text-ctp-crust-light/90">
-            {`&gt;&gt;  Software:`}
+            {`>>  Software:`}
           </h2>
           <ul>
             <li>{`WM/Compositor - Hyprland`}</li>

@@ -13,7 +13,9 @@ export default function HomePage() {
         <div className="max-w-100"></div>
         <div className="text-justify sm:mx-10">
           <p>
-            {`Hi, I'm `}<span className="font-bold">Chamal Randika</span>{`, a
+            {`Hi, I'm `}
+            <span className="font-bold">Chamal Randika</span>
+            {`, a
             hobbyist software engineer, writer, pc builds enthusiast, gamer and
             a keyboard nerd. I goes by the name Chamal1120 online.`}
           </p>
