@@ -1,6 +1,6 @@
 <div align="center">
 
-# My Personal Website
+# Chamal1120's Personal Website
 
  -- *Fast, minimal personal website* --
 
@@ -11,19 +11,16 @@
 
 <br>
 
-<img src="repo-assets/preview.webp" width="360">
+<img src=".github/previews/preview.webp" width="360">
 
 </div>
 
 ## Tech Stack
 
-- T3 stack to bootstrap Next.js
-- TailwindCSS framework for styling
-- Motion animation library
-- Prettier as a formatter
-- Pnpm for package management
-- Node as runtime
-- Vercel for deployment
+- Next (T3)
+- Tailwind
+- Node
+- Pnpm
 
 ## Build Instructions
 

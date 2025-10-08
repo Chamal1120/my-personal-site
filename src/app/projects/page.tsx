@@ -19,6 +19,22 @@ export default function ProjectsPage() {
       sourceCodeLink: "https://github.com/chamal1120/slnic-decoder",
       previewLink: null,
     },
+    {
+      title: "facetimehd Toggle",
+      description:
+        "A gtk systray applet to control the webcam kernel module for intel macbooks running GNU/Linux.",
+      technologies: "gtk3-rs, libappindicator, modprobe, cargo",
+      sourceCodeLink: "https://github.com/Chamal1120/facetimehd-toggle",
+      previewLink: null,
+    },
+    {
+      title: "Macbook Pro 12,1 Linux Fixes",
+      description:
+        "An installable all-in-one fix package to get wifi, bluetooth and thermals working in GNU/Linux.",
+      technologies: "gtk3-rs, libappindicator, modprobe, cargo",
+      sourceCodeLink: "https://github.com/Chamal1120/macbookpro-12-1-linux-fix-files",
+      previewLink: null,
+    },
   ];
 
   return (

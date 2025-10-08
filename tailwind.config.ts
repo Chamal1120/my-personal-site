@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-space-mono)', 'monospace'],
+        grotesk: ['var(--font-space-grotesk)', 'sans-serif'], // secondary font
       },
       colors: {
         /* Catppuccin Colors: 🌙 Mocha (Dark Mode) */
