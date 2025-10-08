@@ -13,6 +13,7 @@ const spaceMono = Space_Mono({
 });
 
 const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
   variable: "--font-space-grotesk",
 });
 
