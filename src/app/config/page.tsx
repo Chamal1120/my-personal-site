@@ -32,11 +32,6 @@ export default function ConfigPage() {
             <li>Video Editor - Kdenlive</li>
           </ul>
         </div>
-        <div>
-          <Link href="/" className="text-2xl font-bold text-ctp-crust-light">
-             Dotfiles
-          </Link>
-        </div>
       </div>
     </>
   );
