@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-// import IntroVideo from "~/components/IntroVideo";
+// import IntroVideo from "~/components/IntroVideo"; // One day I'll add this
 import MyStory from "~/components/MyStory";
 
 // Homepage component

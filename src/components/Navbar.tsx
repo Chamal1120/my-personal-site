@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import DiscordButton from "./DiscordButton";
+import SignInButton from "./SignInButton";
 
 const navItems = [
   { name: "Projects", path: "/projects" },
@@ -30,7 +31,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
           </span>
         </Link>
         <div className="hidden pt-10 text-lg sm:text-left lg:block">
-          <DiscordButton />
+          {/* <DiscordButton /> */}
           {socials.map((item) => (
             <Link target="_blank" href={item.path} key={item.name}>
               <p className="hover:underline">{item.name}</p>
