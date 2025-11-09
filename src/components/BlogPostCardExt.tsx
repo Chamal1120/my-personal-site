@@ -5,10 +5,11 @@ interface BlogPostProps {
   image: string;
   url: string;
   description: string;
-  tags: string;
+  tags: string[];
+  onClick?: () => void;
 }
 
-const BlogPostCard: React.FC<BlogPostProps> = ({
+const BlogPostCardExt: React.FC<BlogPostProps> = ({
   title,
   image,
   url,
@@ -25,8 +26,8 @@ const BlogPostCard: React.FC<BlogPostProps> = ({
         <p className="text-start">{description}</p>
         <div className="py-4 text-start">
           🏷{" "}
-          {tags.split(",").map((tag, index) => (
-            <span key={index}> #{tag.trim()} </span>
+          { tags.map((tag, index) => (
+            <span key={index}>#{tag}</span>
           ))}
         </div>
       </a>
@@ -34,4 +35,4 @@ const BlogPostCard: React.FC<BlogPostProps> = ({
   );
 };
 
-export default BlogPostCard;
+export default BlogPostCardExt;
