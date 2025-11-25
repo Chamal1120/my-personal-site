@@ -9,7 +9,7 @@ export default function CatppuccinWebRing() {
       >
         &larr;
       </a>
-      <p className="text-ctp-crust-light/50">Catppuccin</p>
+      <p className="text-ctp-crust-light/50 cursor-default">Catppuccin</p>
       <a href="https://ctp-webr.ing/">
         <div className="px-2">
           <Image
@@ -20,7 +20,7 @@ export default function CatppuccinWebRing() {
           ></Image>
         </div>
       </a>
-      <p className="text-ctp-crust-light/50">Webring</p>
+      <p className="text-ctp-crust-light/50 cursor-default">Webring</p>
       <a
         className="pl-2 hover:scale-105 active:scale-95"
         href="https://ctp-webr.ing/Chamal1120/next"

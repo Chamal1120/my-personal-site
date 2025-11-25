@@ -21,17 +21,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="text-lg font-semibold uppercase tracking-wide text-ctp-base-light">
             {title}
           </div>
-          <p className="my-2 text-justify text-lg text-ctp-base-light">
+          <p className="my-2 text-justify text-[0.9rem] text-ctp-base-light">
             {description}
           </p>
-          <p className="my-2 text-justify text-sm text-ctp-base-light">
-            <span className="font-bold">Stack:</span> {technologies}
+          <p className="my-2 text-left text-sm text-ctp-base-light">
+            <span className="font-bold">Technologies:</span> {technologies}
           </p>
           <div className="flex flex-row gap-4 pt-2">
-            <button className="bg-neutral-100 text-ctp-crust-dark">
+            <button className="bg-ctp-mantle-light">
               <a
                 href={sourceCodeLink}
-                className="m-3 block text-left text-lg font-medium leading-tight hover:underline"
+                className="m-2 block text-left text-[1rem] font-bold text-ctp-surface0 leading-tight hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >

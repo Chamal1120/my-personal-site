@@ -33,11 +33,11 @@ export default function RootLayout({
       className={`${spaceMono.variable} ${spaceGrotesk.variable}`}
     >
       <head></head>
-      <body className="bg-ctp-mantle-dark text-ctp-crust-light sm:overflow-hidden">
+      <body className="bg-ctp-mantle-dark text-ctp-surface1-light sm:overflow-hidden">
         <TRPCProvider>
           <MobileView>{children}</MobileView>
           <div className="mx-auto hidden h-screen max-w-screen-xl flex-col text-center sm:flex sm:flex-row">
-            <div className="w-128 m-2 mr-0 hidden flex-col border-r-4 border-ctp-lavender-dark bg-ctp-base-dark py-10 sm:flex">
+            <div className="w-128 m-2 mr-0 hidden flex-col border-r-2 border-ctp-yellow-dark bg-ctp-base-dark py-10 sm:flex">
               <div className="flex flex-grow flex-col">
                 <Navbar />
               </div>
