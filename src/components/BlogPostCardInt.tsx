@@ -2,7 +2,7 @@ import Image from "next/image";
 
 interface BlogPostProps {
   title: string;
-  image: string;
+  // image: string;
   description: string;
   tags: string[];
   onClick?: () => void;
@@ -10,7 +10,7 @@ interface BlogPostProps {
 
 const BlogPostCardInt: React.FC<BlogPostProps> = ({
   title,
-  image,
+  // image,
   description,
   tags,
 }) => {

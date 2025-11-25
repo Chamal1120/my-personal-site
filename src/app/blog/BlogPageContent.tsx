@@ -13,11 +13,20 @@ const blogOwner = "chamal1120";
 interface BlogPost {
   id: number;
   title: string;
-  content?: string;
-  cover_image?: string;
-  canonical_url?: string;
-  description?: string;
-  tags?: string[];
+  content?: string | null;
+  cover_image?: string | null;
+  canonical_url?: string | null;
+  description?: string | null;
+  tags?: string[] | null;
+}
+
+interface DevToPost {
+  id: number;
+  title: string;
+  description: string | null;
+  cover_image: string | null;
+  canonical_url: string | null;
+  tag_list: string[];
 }
 
 // BlogPost component: fetches blogs and displays
@@ -44,8 +53,9 @@ export default function BlogPageContent() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
-        const normalized = (data as any[]).map((post) => ({
+        const data: unknown = await response.json();
+        const devToPosts = data as DevToPost[];
+        const normalized = devToPosts.map((post) => ({
           id: post.id,
           title: post.title,
           description: post.description,
@@ -65,7 +75,7 @@ export default function BlogPageContent() {
 
   const router = useRouter();
 
-  const handleClick = (post: any) => {
+  const handleClick = (post: BlogPost) => {
       sessionStorage.setItem("currentPost", JSON.stringify(post));
       router.push(`/blog/${post.id}`);
   }
@@ -86,7 +96,7 @@ export default function BlogPageContent() {
                 key={post.id}
                 title={post.title}
                 description={post.content?.slice(0, 200) ?? ""}
-                image={post.imageUrl ?? ""}
+                // image={post.imageUrl ?? ""}
                 tags={post.tags ?? []}
                 onClick={() => handleClick(post)}
               />
