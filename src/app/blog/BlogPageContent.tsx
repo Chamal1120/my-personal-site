@@ -73,7 +73,7 @@ export default function BlogPageContent() {
 
   return (
     <section className="flex-grow px-8 pt-4">
-      <div className="flex w-full flex-grow flex-wrap">
+      <div className="hidden w-full flex-grow flex-wrap">
         <h2 className="mb-4 text-2xl font-semibold">My Articles</h2>
         {myBlogsError && (
           <p className="text-red-500">Error: {myBlogsError.message}</p>
@@ -97,7 +97,7 @@ export default function BlogPageContent() {
           !myBlogsLoading && <p>No local posts.</p>
         )}
       </div>
-      <h2 className="mb-4 text-2xl font-semibold">My External Articles</h2>
+      {/* <h2 className="mb-4 text-2xl font-semibold">My External Articles</h2> */}
       <div className="flex w-full flex-grow flex-wrap">
         {externalError && <p className="text-red-500">{externalError}</p>}{" "}
         {externalPosts.length > 0 ? (

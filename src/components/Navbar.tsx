@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
-import DiscordButton from "./DiscordButton";
-import SignInButton from "./SignInButton";
+import { usePathname } from "next/navigation"
+// import DiscordButton from "./DiscordButton";
+// import SignInButton from "./SignInButton";
+
 
 const navItems = [
   { name: "Projects", path: "/projects" },
@@ -22,11 +24,13 @@ type NavProps = {
 };
 
 const Navbar = ({ showNav, setShowNav }: NavProps) => {
+  const pathname = usePathname();
+
   return (
     <nav className="sm:mt-0b mt-5 flex-grow items-start justify-between bg-transparent px-8 text-xl sm:flex sm:flex-col">
       <div>
         <Link href="/" className="hidden sm:block">
-          <span className="relative inline-block pb-1 text-4xl font-bold">
+          <span className="relative inline-block pb-1 text-4xl font-bold text-ctp-yellow-dark">
             Chamal1120
           </span>
         </Link>
@@ -34,7 +38,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
           {/* <DiscordButton /> */}
           {socials.map((item) => (
             <Link target="_blank" href={item.path} key={item.name}>
-              <p className="hover:underline">{item.name}</p>
+              <p className="hover:underline hover:text-ctp-mantle-light">{item.name}</p>
             </Link>
           ))}
         </div>
@@ -48,7 +52,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
             className="text-center font-semibold sm:text-left"
           >
             <Link href={item.path}>
-              <span className="relative inline-block">{item.name}</span>
+              <span className={` ${pathname == item.path? "text-ctp-yellow-dark" : ""} text-ctp-surface1-light" "relative inline-block hover:text-ctp-crust-light`}>{item.name}</span>
             </Link>
           </li>
         ))}
@@ -57,7 +61,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
           className="text-center font-semibold sm:text-left"
         >
           <Link href="/">
-            <p>Home</p>
+            <p className={pathname == "/"? "text-ctp-yellow-dark" : "text-ctp-surface1-light"}>Home</p>
           </Link>
         </li>
       </ul>
