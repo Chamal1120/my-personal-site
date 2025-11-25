@@ -1,26 +1,26 @@
 "use client"
 
-import { useState } from "react";
-import { trpc } from "~/utils/trpc";
+// import { useState } from "react";
+// import { trpc } from "~/utils/trpc";
 import SignInButton from "~/components/SignInButton";
 import SignOutButton from "~/components/SignOutButton";
 
 export default function AdminPageContent() {
-    const [title, setTitle] = useState<string>("");
-    const [content, setContent] = useState<string>("");
-    const [tags, setTags] = useState<string>("");
-    const [imageUrl, setImageUrl] = useState<string>("");
-    const createBlog = trpc.blog.create.useMutation();
+    // const [title, setTitle] = useState<string>("");
+    // const [content, setContent] = useState<string>("");
+    // const [tags, setTags] = useState<string>("");
+    // const [imageUrl, setImageUrl] = useState<string>("");
+    // const createBlog = trpc.blog.create.useMutation();
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        createBlog.mutate({
-            title,
-            content,
-            imageUrl,
-            tags: tags.split(",").map(tag => tag.trim()).filter(Boolean),
-        })
-    }
+   // const handleSubmit = (e: React.FormEvent) => {
+   //     e.preventDefault();
+   //     createBlog.mutate({
+   //         title,
+   //         content,
+   //         imageUrl,
+   //         tags: tags.split(",").map(tag => tag.trim()).filter(Boolean),
+   //     })
+   // }
 
     return (
         <>
@@ -28,6 +28,7 @@ export default function AdminPageContent() {
         <SignInButton />
         <SignOutButton />
         <div>
+            {/* 
             <form className="flex flex-col justify-center text-black gap-2 p-2">
                 <input
                     className="font-bold p-2"
@@ -62,6 +63,7 @@ export default function AdminPageContent() {
                     Publish
                 </button>
             </form>
+            */}
         </div>
         </>
     );
