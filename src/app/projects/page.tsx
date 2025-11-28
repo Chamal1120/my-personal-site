@@ -7,7 +7,8 @@ export default function ProjectsPage() {
       title: "CV Submission Automator",
       description:
         "An automated CV and resume processing pipeline from the submission to the employer review.",
-      technologies: "Python 3, AWS Lambda Functions, Terraform, SendGrid, react",
+      technologies:
+        "Python 3, AWS Lambda Functions, Terraform, SendGrid, react",
       sourceCodeLink: "https://github.com/Chamal1120/cv-submission-automator",
       previewLink: null,
     },

@@ -76,10 +76,9 @@ export default function BlogPageContent() {
   const router = useRouter();
 
   const handleClick = (post: BlogPost) => {
-      sessionStorage.setItem("currentPost", JSON.stringify(post));
-      router.push(`/blog/${post.id}`);
-  }
-
+    sessionStorage.setItem("currentPost", JSON.stringify(post));
+    router.push(`/blog/${post.id}`);
+  };
 
   return (
     <section className="flex-grow px-8 pt-4">
@@ -91,16 +90,16 @@ export default function BlogPageContent() {
         {myBlogs && myBlogs.length > 0 ? (
           <div className="flex flex-wrap gap-4">
             {myBlogs.map((post) => (
-            <Link key={post.id} href={`/blog/${post.id}`}>
-              <BlogPostCardInt
-                key={post.id}
-                title={post.title}
-                description={post.content?.slice(0, 200) ?? ""}
-                // image={post.imageUrl ?? ""}
-                tags={post.tags ?? []}
-                onClick={() => handleClick(post)}
-              />
-            </Link>
+              <Link key={post.id} href={`/blog/${post.id}`}>
+                <BlogPostCardInt
+                  key={post.id}
+                  title={post.title}
+                  description={post.content?.slice(0, 200) ?? ""}
+                  // image={post.imageUrl ?? ""}
+                  tags={post.tags ?? []}
+                  onClick={() => handleClick(post)}
+                />
+              </Link>
             ))}
           </div>
         ) : (

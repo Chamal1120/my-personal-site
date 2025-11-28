@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   previewLink,
 }) => {
   return (
-    <div className="mx-auto w-full overflow-hidden bg-ctp-mantle-dark/50  p-4 shadow-md lg:w-[calc(50%-1rem)]">
+    <div className="mx-auto w-full overflow-hidden bg-ctp-mantle-dark/50 p-4 shadow-md lg:w-[calc(50%-1rem)]">
       <div className="flex-col items-start justify-start gap-2 md:flex">
         <div className="md:shrink-0"></div>
         <div className="flex flex-col items-start justify-start">
@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <button className="bg-ctp-mantle-light">
               <a
                 href={sourceCodeLink}
-                className="mx-2.5 my-2 block text-left text-[0.8rem] font-bold text-ctp-surface0 leading-tight hover:underline"
+                className="mx-2.5 my-2 block text-left text-[0.8rem] font-bold leading-tight text-ctp-surface0 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >

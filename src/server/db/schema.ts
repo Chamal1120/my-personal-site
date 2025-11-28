@@ -1,9 +1,9 @@
-import { 
-    integer, 
-    pgTable, 
-    varchar, 
-    text, 
-    timestamp, 
+import {
+  integer,
+  pgTable,
+  varchar,
+  text,
+  timestamp,
 } from "drizzle-orm/pg-core";
 
 export const blogsTable = pgTable("blogs", {
@@ -12,5 +12,5 @@ export const blogsTable = pgTable("blogs", {
   content: text("content").notNull(),
   imageUrl: text("imageUrl"),
   tags: text("tags").array(),
-  publishedAt: timestamp("published_at").defaultNow()
+  publishedAt: timestamp("published_at").defaultNow(),
 });

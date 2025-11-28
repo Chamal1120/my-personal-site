@@ -11,8 +11,8 @@ export default async function AdminPage() {
     redirect("/");
   }
   return (
-  <TRPCProvider>
-  <AdminPageContent />
-  </TRPCProvider>
+    <TRPCProvider>
+      <AdminPageContent />
+    </TRPCProvider>
   );
 }

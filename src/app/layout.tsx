@@ -34,7 +34,7 @@ export default function RootLayout({
       className={`${spaceMono.variable} ${spaceGrotesk.variable}`}
     >
       <head></head>
-      <body className="bg-ctp-mantle-dark text-ctp-lavender-dark sm:overflow-hidden font-grotesk">
+      <body className="bg-ctp-mantle-dark font-grotesk text-ctp-lavender-dark sm:overflow-hidden">
         <TRPCProvider>
           <MobileView>{children}</MobileView>
           <div className="mx-auto hidden h-screen max-w-screen-2xl flex-col text-center sm:flex sm:flex-row">

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function ConfigPage() {
   return (
     <>
-      <h1 className="font-bold text-3xl text-left pl-4 pt-4">Info</h1>
+      <h1 className="pl-4 pt-4 text-left text-3xl font-bold">Info</h1>
       <div className="flex flex-row gap-5 p-4 text-left">
         <div>
           <ul>

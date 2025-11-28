@@ -17,36 +17,36 @@
 //}
 
 export default function BlogPostPage() {
-   // const  { id } = useParams();
-   // // const [post, setPost] = useState<BlogPost| null>(null);
-   // useEffect(() => {
-   //     const cached = sessionStorage.getItem("currentPost");
-   //     if (cached) {
-   //         const parsed: BlogPost = JSON.parse(cached);
-   //         if (parsed.id === Number(id)) setPost(parsed);
-   //     }
-   // }, [id]);
+  // const  { id } = useParams();
+  // // const [post, setPost] = useState<BlogPost| null>(null);
+  // useEffect(() => {
+  //     const cached = sessionStorage.getItem("currentPost");
+  //     if (cached) {
+  //         const parsed: BlogPost = JSON.parse(cached);
+  //         if (parsed.id === Number(id)) setPost(parsed);
+  //     }
+  // }, [id]);
 
-    // Fallback fetch if directly visited
-   //  const {
-   //    data: blogPostd,
-   //    isLoading: blogPostLoading,
-   //    error: blogPostError,
-   //  } = trpc.blog.byId.useQuery(
-   //      { id: Number(id) },
-   //      { enabled: post === null }
-   //  );
+  // Fallback fetch if directly visited
+  //  const {
+  //    data: blogPostd,
+  //    isLoading: blogPostLoading,
+  //    error: blogPostError,
+  //  } = trpc.blog.byId.useQuery(
+  //      { id: Number(id) },
+  //      { enabled: post === null }
+  //  );
 
-    // useEffect(() => {
-    //     if (blogPostd && post === null) {
-    //         setPost(blogPostd);
-    //         sessionStorage.setItem("currentPost", JSON.stringify(blogPostd));
-    //     }
-    // }, [blogPostd, post]);
+  // useEffect(() => {
+  //     if (blogPostd && post === null) {
+  //         setPost(blogPostd);
+  //         sessionStorage.setItem("currentPost", JSON.stringify(blogPostd));
+  //     }
+  // }, [blogPostd, post]);
 
-    // if (!post) return <p> Loading post...</p>
+  // if (!post) return <p> Loading post...</p>
 
-    return (
+  return (
     //    <TRPCProvider>
     //        <div className="max-w-3xl mx-auto p-4">
     //         <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
@@ -66,5 +66,5 @@ export default function BlogPostPage() {
     //        </div>
     //    </TRPCProvider>
     <></>
-    );
-} 
+  );
+}

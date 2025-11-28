@@ -24,10 +24,12 @@ const BlogPostCardExt: React.FC<BlogPostProps> = ({
             <Image src={image} alt={title} width={1000} height={420} />
           </div>
           <div className="bg-ctp-mantle/60 p-4">
-            <h3 className="text-md py-4 text-ctp-lavender-dark text-start font-semibold uppercase tracking-wide">
+            <h3 className="text-md py-4 text-start font-semibold uppercase tracking-wide text-ctp-lavender-dark">
               {title}
             </h3>
-            <p className="text-start  text-ctp-crust-light text-[0.8rem]">{description}</p>
+            <p className="text-start text-[0.8rem] text-ctp-crust-light">
+              {description}
+            </p>
             <div className="py-4 text-start text-[0.7rem] text-ctp-lavender-dark/70">
               {tags.map((tag, index) => (
                 <span key={index}> #{tag}</span>

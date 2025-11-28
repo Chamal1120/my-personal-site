@@ -17,7 +17,9 @@ export default function MobileView({
         <div className="flex flex-row justify-between p-2">
           <div className="">
             <Link href="/">
-              <p className="text-2xl font-bold font-sans text-ctp-yellow">Chamal1120</p>
+              <p className="font-sans text-2xl font-bold text-ctp-yellow">
+                Chamal1120
+              </p>
             </Link>
           </div>
           <div>
