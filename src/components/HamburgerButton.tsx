@@ -12,21 +12,21 @@ export default function HamburgerButton({ showNav, setShowNav }: NavProps) {
     >
       {/* Line 1 */}
       <span
-        className={`block h-0.5 w-6 transform bg-ctp-crust-light transition-all duration-300 ${
+        className={`block h-0.5 w-6 bg-ctp-yellow-dark transform transition-all duration-300 ${
           showNav ? "translate-y-1.5 rotate-45" : ""
         }`}
       ></span>
 
       {/* Line 2 */}
       <span
-        className={`block h-0.5 w-6 bg-ctp-crust-light transition-all duration-300 ${
+        className={`block h-0.5 w-6 transition-all bg-ctp-yellow-dark duration-300 ${
           showNav ? "opacity-0" : ""
         }`}
       ></span>
 
       {/* Line 3 */}
       <span
-        className={`block h-0.5 w-6 transform bg-ctp-crust-light transition-all duration-300 ${
+        className={`block h-0.5 w-6 transform transition-all bg-ctp-yellow-dark duration-300 ${
           showNav ? "-translate-y-1.5 -rotate-45" : ""
         }`}
       ></span>

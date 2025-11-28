@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function CatppuccinWebRing() {
   return (
-    <>
+    <div className="text-ctp-lavender-dark/80 hover:text-ctp-lavender-dark flex flex-row">
       <a
-        className="pr-2 hover:scale-105 active:scale-95"
+        className="pr-2"
         href="https://ctp-webr.ing/Chamal1120/previous"
       >
         &larr;
       </a>
-      <p className="text-ctp-crust-light/50 cursor-default">Catppuccin</p>
+      <p className="cursor-default">Catppuccin</p>
       <a href="https://ctp-webr.ing/">
         <div className="px-2">
           <Image
@@ -20,13 +20,13 @@ export default function CatppuccinWebRing() {
           ></Image>
         </div>
       </a>
-      <p className="text-ctp-crust-light/50 cursor-default">Webring</p>
+      <p className="cursor-default">Webring</p>
       <a
-        className="pl-2 hover:scale-105 active:scale-95"
+        className="pl-2"
         href="https://ctp-webr.ing/Chamal1120/next"
       >
         &rarr;
       </a>
-    </>
+    </div>
   );
 }

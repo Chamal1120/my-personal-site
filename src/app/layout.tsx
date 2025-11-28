@@ -15,6 +15,7 @@ const spaceMono = Space_Mono({
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-space-grotesk",
 });
 
@@ -33,10 +34,10 @@ export default function RootLayout({
       className={`${spaceMono.variable} ${spaceGrotesk.variable}`}
     >
       <head></head>
-      <body className="bg-ctp-mantle-dark text-ctp-surface1-light sm:overflow-hidden">
+      <body className="bg-ctp-mantle-dark text-ctp-lavender-dark sm:overflow-hidden font-grotesk">
         <TRPCProvider>
           <MobileView>{children}</MobileView>
-          <div className="mx-auto hidden h-screen max-w-screen-xl flex-col text-center sm:flex sm:flex-row">
+          <div className="mx-auto hidden h-screen max-w-screen-2xl flex-col text-center sm:flex sm:flex-row">
             <div className="w-128 m-2 mr-0 hidden flex-col border-r-2 border-ctp-yellow-dark bg-ctp-base-dark py-10 sm:flex">
               <div className="flex flex-grow flex-col">
                 <Navbar />
@@ -48,9 +49,6 @@ export default function RootLayout({
             <main className="m-2 flex flex-1 flex-grow flex-col overflow-y-auto bg-ctp-base-dark">
               {children}
             </main>
-            <div className="mr-2 flex h-full w-2 flex-col justify-end bg-transparent">
-              <ScrollProgress />
-            </div>
           </div>
         </TRPCProvider>
       </body>

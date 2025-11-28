@@ -30,7 +30,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
     <nav className="sm:mt-0b mt-5 flex-grow items-start justify-between bg-transparent px-8 text-xl sm:flex sm:flex-col">
       <div>
         <Link href="/" className="hidden sm:block">
-          <span className="relative inline-block pb-1 text-4xl font-bold text-ctp-yellow-dark">
+          <span className="relative inline-block pb-1 text-4xl font-bold font-sans text-ctp-yellow-dark">
             Chamal1120
           </span>
         </Link>
@@ -38,7 +38,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
           {/* <DiscordButton /> */}
           {socials.map((item) => (
             <Link target="_blank" href={item.path} key={item.name}>
-              <p className="hover:underline hover:text-ctp-mantle-light">{item.name}</p>
+              <p className="hover:underline hover:text-ctp-yellow-dark">{item.name}</p>
             </Link>
           ))}
         </div>
@@ -61,7 +61,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
           className="text-center font-semibold sm:text-left"
         >
           <Link href="/">
-            <p className={pathname == "/"? "text-ctp-yellow-dark" : "text-ctp-surface1-light"}>Home</p>
+            <p className={pathname == "/"? "text-ctp-yellow-dark" : "text-ctp-lavender-dark"}>Home</p>
           </Link>
         </li>
       </ul>
