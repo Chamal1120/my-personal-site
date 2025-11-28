@@ -3,7 +3,7 @@ import { Space_Grotesk, Space_Mono } from "next/font/google";
 import Navbar from "~/../src/components/Navbar";
 import { type Metadata } from "next";
 import Footer from "~/components/Footer";
-import ScrollProgress from "~/components/ScrollProgress";
+// import ScrollProgress from "~/components/ScrollProgress";
 import MobileView from "./mobileView";
 import { TRPCProvider } from "~/providers/trpc-provider";
 
