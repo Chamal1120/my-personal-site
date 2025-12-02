@@ -6,6 +6,7 @@ import Footer from "~/components/Footer";
 // import ScrollProgress from "~/components/ScrollProgress";
 import MobileView from "./mobileView";
 import { TRPCProvider } from "~/providers/trpc-provider";
+import * as motion from "motion/react-client";
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -37,15 +38,20 @@ export default function RootLayout({
       <body className="bg-ctp-mantle-dark font-grotesk text-ctp-lavender-dark sm:overflow-hidden">
         <TRPCProvider>
           <MobileView>{children}</MobileView>
-          <div className="mx-auto hidden h-screen max-w-screen-2xl flex-col text-center sm:flex sm:flex-row">
-            <div className="w-128 m-2 mr-0 hidden flex-col border-r-2 border-ctp-yellow-dark bg-ctp-base-dark py-10 sm:flex">
+          <div className="mx-auto hidden h-[100dvh] max-w-screen-2xl flex-col text-center sm:flex sm:flex-row">
+            <motion.div
+              className="w-128 m-2 mr-0 hidden flex-col border-r-2 border-ctp-yellow-dark bg-ctp-base-dark py-10 sm:flex"
+              initial={{ borderColor: "rgba(249, 226, 175, 0)" }}
+              animate={{ borderColor: "rgba(249, 226, 175, 1)" }}
+              transition={{ duration: 1 }}
+            >
               <div className="flex flex-grow flex-col">
                 <Navbar />
               </div>
               <div>
                 <Footer />
               </div>
-            </div>
+            </motion.div>
             <main className="m-2 flex flex-1 flex-grow flex-col overflow-y-auto bg-ctp-base-dark">
               {children}
             </main>

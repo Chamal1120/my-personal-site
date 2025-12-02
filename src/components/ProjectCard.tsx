@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   previewLink,
 }) => {
   return (
-    <div className="mx-auto w-full overflow-hidden bg-ctp-mantle-dark/50 p-4 shadow-md lg:w-[calc(50%-1rem)]">
+    <div className="mx-auto overflow-hidden bg-ctp-mantle-dark/50 p-4 shadow-md">
       <div className="flex-col items-start justify-start gap-2 md:flex">
         <div className="md:shrink-0"></div>
         <div className="flex flex-col items-start justify-start">

@@ -13,7 +13,7 @@ export default function MobileView({
   const [showNav, setShowNav] = useState(false);
   return (
     <>
-      <div className="flex h-screen flex-col overflow-hidden sm:hidden">
+      <div className="flex h-[100dvh] flex-col overflow-hidden sm:hidden">
         <div className="flex flex-row justify-between p-2">
           <div className="">
             <Link href="/">
