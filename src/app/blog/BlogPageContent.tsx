@@ -6,6 +6,7 @@ import BlogPostCardInt from "~/components/BlogPostCardInt";
 import BlogPostCardExt from "~/components/BlogPostCardExt";
 import { trpc } from "~/utils/trpc";
 import Link from "next/link";
+import * as motion from "motion/react-client";
 
 const blogOwner = "chamal1120";
 
@@ -111,14 +112,26 @@ export default function BlogPageContent() {
         {externalError && <p className="text-red-500">{externalError}</p>}{" "}
         {externalPosts.length > 0 ? (
           externalPosts.map((post) => (
-            <BlogPostCardExt
+            <motion.div
               key={post.id}
-              title={post.title}
-              description={post.description ?? ""}
-              image={post.cover_image ?? ""}
-              url={post.canonical_url ?? ""}
-              tags={post.tags ?? []}
-            />
+              className="w-full lg:w-[calc(50%-1rem)]"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1.5, ease: [0, 0.71, 0.2, 1.01] },
+              }}
+              viewport={{ amount: 0.2 }}
+            >
+              <BlogPostCardExt
+                key={post.id}
+                title={post.title}
+                description={post.description ?? ""}
+                image={post.cover_image ?? ""}
+                url={post.canonical_url ?? ""}
+                tags={post.tags ?? []}
+              />
+            </motion.div>
           ))
         ) : (
           <div

@@ -17,7 +17,7 @@ const BlogPostCardExt: React.FC<BlogPostProps> = ({
   tags,
 }) => {
   return (
-    <div className="w-full px-5 py-10 lg:w-[calc(50%-1rem)]">
+    <div className="px-4 py-5">
       <a href={url} target="_blank">
         <div className="flex flex-col">
           <div>
