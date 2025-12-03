@@ -116,6 +116,7 @@ export default function BlogPageContent() {
               key={post.id}
               className="w-full lg:w-[calc(50%-1rem)]"
               initial={{ opacity: 0, y: 15 }}
+              whileHover={{ y: -3 }}
               whileInView={{
                 opacity: 1,
                 y: 0,

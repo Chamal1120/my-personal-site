@@ -2,13 +2,18 @@ import Image from "next/image";
 
 export default function CatppuccinWebRing() {
   return (
-    <div className="flex flex-row text-ctp-lavender-dark/80 hover:text-ctp-lavender-dark">
-      <a className="pr-2" href="https://ctp-webr.ing/Chamal1120/previous">
-        &larr;
+    <div className="group flex flex-row text-ctp-lavender-dark/80 hover:text-ctp-lavender-dark sm:pl-2">
+      <a
+        className="h translate-y-0.5 pr-2 transition-all duration-300 ease-in-out hover:-translate-x-0.5 hover:text-ctp-yellow-dark"
+        href="https://ctp-webr.ing/Chamal1120/previous"
+      >
+        &lt;
       </a>
-      <p className="cursor-default">Catppuccin</p>
+      <p className="cursor-default transition-all duration-300 ease-in-out group-hover:-translate-x-0.5">
+        ctp
+      </p>
       <a href="https://ctp-webr.ing/">
-        <div className="px-2">
+        <div className="origin-center px-2 transition-all duration-300 ease-in-out group-hover:-rotate-[0.5rad]">
           <Image
             src="/catppuccin_icon.png"
             width="20"
@@ -17,9 +22,14 @@ export default function CatppuccinWebRing() {
           ></Image>
         </div>
       </a>
-      <p className="cursor-default">Webring</p>
-      <a className="pl-2" href="https://ctp-webr.ing/Chamal1120/next">
-        &rarr;
+      <p className="cursor-default transition-all duration-300 ease-in-out group-hover:translate-x-0.5">
+        webring
+      </p>
+      <a
+        className="translate-y-0.5 pl-2 transition-all duration-300 ease-in-out hover:translate-x-0.5 hover:text-ctp-yellow-dark"
+        href="https://ctp-webr.ing/Chamal1120/next"
+      >
+        &gt;
       </a>
     </div>
   );

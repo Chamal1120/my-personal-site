@@ -31,7 +31,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
       <div>
         <Link href="/" className="hidden sm:block">
           <motion.span
-            className="relative inline-block pb-1 font-sans text-4xl font-bold text-ctp-yellow-dark"
+            className="relative inline-block pb-1 font-sans text-4xl font-bold text-ctp-yellow-dark hover:text-ctp-lavender-dark"
             initial={{ opacity: 0, y: -10 }}
             animate={{
               opacity: 1,
@@ -64,9 +64,27 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
                 }}
               >
                 <Link target="_blank" href={item.path} key={item.name}>
-                  <p className="hover:text-ctp-yellow-dark hover:underline">
-                    {item.name}
-                  </p>
+                  <div className="group flex flex-row gap-1 pb-2">
+                    <p className="hover:text-ctp-yellow-dark hover:underline">
+                      {item.name}
+                    </p>
+                    <span className="inline-block h-3.5 w-3.5 transition-all duration-300 ease-in-out group-hover:-translate-y-[3px] group-hover:translate-x-[3px]">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-full w-full translate-y-[4px] group-hover:text-ctp-yellow-dark"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6 18L18 6M18 6H10M18 6V14"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </Link>
               </motion.li>
             ))}
@@ -91,9 +109,34 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
               },
             }}
           >
-            <Link href={item.path}>
+            <Link className="group" href={item.path}>
+              <span className="relative hidden h-6 w-3.5 text-[1.3rem] sm:inline-block">
+                {/* Slash */}
+                <span className="absolute inset-0 z-10 origin-bottom transition-all duration-300 group-hover:rotate-45 group-hover:opacity-0">
+                  /
+                </span>
+
+                {/* Arrow */}
+                <span className="absolute inset-0 z-0 translate-x-0.5 translate-y-1 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4 12H20M20 12L14 6M20 12L14 18"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </span>
               <span
-                className={` ${pathname == item.path ? "text-ctp-yellow-dark" : ""} text-ctp-surface1-light" "relative inline-block hover:text-ctp-crust-light`}
+                className={` ${pathname == item.path ? "text-ctp-yellow-dark" : ""} text-ctp-surface1-light" "sm:relative transition-all duration-300 ease-in-out sm:inline-block sm:group-hover:translate-x-2`}
               >
                 {item.name}
               </span>
@@ -110,16 +153,37 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
             transition: { delay: 0.5, duration: 1, ease: [0, 0.71, 0.2, 1.01] },
           }}
         >
-          <Link href="/">
-            <p
-              className={
-                pathname == "/"
-                  ? "text-ctp-yellow-dark"
-                  : "text-ctp-lavender-dark"
-              }
+          <Link href="/" className="group">
+            <span className="relative hidden h-6 w-3.5 text-[1.3rem] sm:inline-block">
+              {/* Slash */}
+              <span className="absolute inset-0 z-10 origin-bottom transition-all duration-300 group-hover:rotate-45 group-hover:opacity-0">
+                /
+              </span>
+
+              {/* Arrow */}
+              <span className="absolute inset-0 z-0 translate-x-0.5 translate-y-1 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 12H20M20 12L14 6M20 12L14 18"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span
+              className={`${pathname == "/" ? "text-ctp-yellow-dark" : "text-ctp-lavender-dark"} transition-all duration-300 ease-in-out sm:relative sm:inline-block sm:group-hover:translate-x-2`}
             >
               Home
-            </p>
+            </span>
           </Link>
         </motion.li>
       </ul>

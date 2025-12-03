@@ -6,7 +6,7 @@ export default function ConfigPage() {
   return (
     <>
       <motion.h1
-        className="pl-4 pt-4 text-left text-3xl font-bold"
+        className="cursor-default pl-4 pt-4 text-left text-3xl font-bold"
         initial={{
           opacity: 0,
           y: 10,
@@ -19,7 +19,7 @@ export default function ConfigPage() {
       >
         Info
       </motion.h1>
-      <div className="flex flex-row gap-5 p-4 text-left">
+      <div className="flex cursor-default flex-row gap-5 p-4 text-left">
         <div>
           <motion.ul
             initial={{

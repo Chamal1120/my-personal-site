@@ -20,10 +20,14 @@ export default function HomePage() {
           animate={{
             opacity: 1,
             y: 0,
-            transition: { duration: 1, ease: [0, 0.71, 0.2, 1.01] },
+            transition: {
+              delay: 0.2,
+              duration: 1.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            },
           }}
         >
-          <p>
+          <p className="cursor-default duration-1000 ease-in-out hover:text-ctp-crust-light">
             {`Hello, My name is `}
             <span className="font-bold">{`Chamal`}</span>
             <span>
@@ -34,7 +38,7 @@ export default function HomePage() {
             </span>
           </p>
           <br />
-          <p>{`I'm interested in systems programming, web dev and ai.`}</p>
+          <p className="cursor-default duration-1000 ease-in-out hover:text-ctp-crust-light">{`I'm interested in systems programming, web dev and ai.`}</p>
           <br />
         </motion.div>
       </div>

@@ -50,8 +50,12 @@ export default function ProjectsPage() {
           {projects.map((project, index) => (
             <motion.li
               key={index}
-              className="w-full lg:w-[calc(50%-1rem)]"
+              className="w-full cursor-default lg:w-[calc(50%-1rem)]"
               initial={{ opacity: 0, y: 10 }}
+              whileHover={{
+                y: -3,
+                transition: { duration: 0.5 },
+              }}
               animate={{
                 opacity: 1,
                 y: 0,

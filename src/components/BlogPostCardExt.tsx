@@ -23,7 +23,7 @@ const BlogPostCardExt: React.FC<BlogPostProps> = ({
           <div>
             <Image src={image} alt={title} width={1000} height={420} />
           </div>
-          <div className="bg-ctp-mantle/60 p-4">
+          <div className="bg-ctp-mantle/50 p-4 hover:bg-ctp-mantle-light/5">
             <h3 className="text-md py-4 text-start font-semibold uppercase tracking-wide text-ctp-lavender-dark">
               {title}
             </h3>

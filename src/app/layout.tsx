@@ -43,7 +43,7 @@ export default function RootLayout({
               className="w-128 m-2 mr-0 hidden flex-col border-r-2 border-ctp-yellow-dark bg-ctp-base-dark py-10 sm:flex"
               initial={{ borderColor: "rgba(249, 226, 175, 0)" }}
               animate={{ borderColor: "rgba(249, 226, 175, 1)" }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 2 }}
             >
               <div className="flex flex-grow flex-col">
                 <Navbar />
