@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* ------------------------------
+   CATPPUCCIN VARIABLES
+------------------------------ */
+:root {
+  /* Light Mode */
+  --ctp-crust: #DCE0E8;
+  --ctp-mantle: #E6E9EF;
+  --ctp-base: #EFF1F5;
+  --ctp-surface0: #CCD0DA;
+  --ctp-surface1: #BCC0CC;
+  --ctp-surface2: #ACB0BE;
+  --ctp-text: #4C4F69;
+  --ctp-subtext0: #6C6F85;
+  --ctp-subtext1: #5C5F77;
+  --ctp-pink: #EA76CB;
+  --ctp-red: #D20F39;
+  --ctp-maroon: #E64553;
+  --ctp-yellow: #DF8E1D;
+  --ctp-green: #40A02B;
+  --ctp-blue: #1E66F5;
+  --ctp-teal: #179299;
+  --ctp-lavender: #7287FD;
+}
+
+/* Dark mode — applies automatically if user's OS is dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ctp-crust: #11111B;
+    --ctp-mantle: #181825;
+    --ctp-base: #1E1E2E;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475A;
+    --ctp-surface2: #585B70;
+    --ctp-text: #CDD6F4;
+    --ctp-subtext0: #A6ADC8;
+    --ctp-subtext1: #BAC2DE;
+    --ctp-pink: #F5C2E7;
+    --ctp-red: #F38BA8;
+    --ctp-maroon: #EBA0AC;
+    --ctp-yellow: #F9E2AF;
+    --ctp-green: #A6E3A1;
+    --ctp-blue: #89B4FA;
+    --ctp-teal: #94E2D5;
+    --ctp-lavender: #B4BEFE;
+  }
+}
+
+/* ------------------------------
+   TAILWIND THEME BINDINGS
+------------------------------ */
+@theme inline {
+  /* Colors */
+  --color-ctp-crust: var(--ctp-crust);
+  --color-ctp-mantle: var(--ctp-mantle);
+  --color-ctp-base: var(--ctp-base);
+  --color-ctp-surface0: var(--ctp-surface0);
+  --color-ctp-surface1: var(--ctp-surface1);
+  --color-ctp-surface2: var(--ctp-surface2);
+  --color-ctp-text: var(--ctp-text);
+  --color-ctp-subtext0: var(--ctp-subtext0);
+  --color-ctp-subtext1: var(--ctp-subtext1);
+  --color-ctp-pink: var(--ctp-pink);
+  --color-ctp-red: var(--ctp-red);
+  --color-ctp-maroon: var(--ctp-maroon);
+  --color-ctp-yellow: var(--ctp-yellow);
+  --color-ctp-green: var(--ctp-green);
+  --color-ctp-blue: var(--ctp-blue);
+  --color-ctp-teal: var(--ctp-teal);
+  --color-ctp-lavender: var(--ctp-lavender);
+
+  /* Fonts */
+  --font-sans: var(--font-space-mono), monospace;
+  --font-grotesk: var(--font-space-grotesk), sans-serif;
+}
+
+/* ------------------------------
+   BASE STYLES
+------------------------------ */
+
+/* hide scrollbars */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+

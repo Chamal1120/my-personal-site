@@ -1,0 +1,12 @@
+# Next.js build output
+.next/
+out/
+
+# Node
+node_modules/
+
+# Other common things you don't want formatted
+dist/
+build/
+coverage/
+
