@@ -17,7 +17,7 @@ export default function MobileView({
         <div className="flex flex-row justify-between p-2">
           <div className="">
             <Link href="/">
-              <p className="text-ctp-yellow font-sans text-2xl font-bold">
+              <p className="text-yellow font-sans text-2xl font-bold">
                 Chamal1120
               </p>
             </Link>
@@ -27,9 +27,7 @@ export default function MobileView({
           </div>
         </div>
         <div className="flex grow flex-col items-center justify-center overflow-y-auto">
-          <main className="bg-ctp-base m-2 grow overflow-y-auto">
-            {children}
-          </main>
+          <main className="bg-bg m-2 grow overflow-y-auto">{children}</main>
           <Footer />
         </div>
         <div

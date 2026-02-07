@@ -22,7 +22,7 @@ const BlogPostCardInt: React.FC<BlogPostProps> = ({
         width={1000}
         height={420}
       />
-      <h3 className="text-ctp-base-light py-4 text-start text-lg font-semibold tracking-wide uppercase">
+      <h3 className="text-fg py-4 text-start text-lg font-semibold tracking-wide uppercase">
         {title}
       </h3>
       <p className="text-start">{description}</p>

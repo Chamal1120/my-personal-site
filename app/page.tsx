@@ -22,7 +22,7 @@ export default function HomePage() {
             },
           }}
         >
-          <p className="hover:text-ctp-crust-light cursor-default duration-1000 ease-in-out">
+          <p className="cursor-default duration-1000 ease-in-out">
             {`Hello, My name is `}
             <span className="font-bold">{`Chamal`}</span>
             <span>
@@ -33,7 +33,7 @@ export default function HomePage() {
             </span>
           </p>
           <br />
-          <p className="hover:text-ctp-crust-light cursor-default duration-1000 ease-in-out">{`I'm interested in systems programming, web dev and ai.`}</p>
+          <p className="cursor-default duration-1000 ease-in-out">{`I'm interested in systems programming, web dev and ai.`}</p>
           <br />
         </motion.div>
       </div>

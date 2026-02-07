@@ -16,7 +16,7 @@ export default function DiscordButton() {
         {!showCopyStatus ? "Discord" : "Discord ID Copied!"}
       </button>
       {showToast && (
-        <div className="bg-ctp-surface1 text-ctp-crust-light fixed bottom-8 left-1/2 z-9999 -translate-x-1/5 p-2 text-sm shadow-lg">
+        <div className="text-fg fixed bottom-8 left-1/2 z-9999 -translate-x-1/5 bg-black p-2 text-sm shadow-lg">
           Copied to clipboard!
         </div>
       )}

@@ -29,7 +29,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
       <div>
         <Link href="/" className="hidden sm:block">
           <motion.span
-            className="text-ctp-yellow hover:text-ctp-lavender relative inline-block pb-1 font-sans text-4xl font-bold"
+            className="text-yellow hover:text-magenta relative inline-block pb-1 font-sans text-4xl font-bold"
             initial={{ opacity: 0, y: -10 }}
             animate={{
               opacity: 1,
@@ -63,13 +63,13 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
               >
                 <Link target="_blank" href={item.path} key={item.name}>
                   <div className="group flex flex-row gap-1 pb-2">
-                    <p className="group-hover:text-ctp-yellow group-hover:underline">
+                    <p className="group-hover:text-yellow group-hover:underline">
                       {item.name}
                     </p>
                     <span className="inline-block h-3.5 w-3.5 transition-all duration-300 ease-in-out group-hover:translate-x-[3px] group-hover:-translate-y-[3px]">
                       <svg
                         viewBox="0 0 24 24"
-                        className="group-hover:text-ctp-yellow h-full w-full translate-y-1"
+                        className="group-hover:text-yellow h-full w-full translate-y-1"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
@@ -110,9 +110,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
             <Link className="group" href={item.path}>
               <span
                 className={`relative hidden h-6 w-3.5 text-[1.3rem] sm:inline-block ${
-                  pathname === item.path
-                    ? "text-ctp-yellow"
-                    : "text-ctp-lavender"
+                  pathname === item.path ? "text-yellow" : "text-magenta"
                 }`}
               >
                 {/* Slash */}
@@ -140,7 +138,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
                 </span>
               </span>
               <span
-                className={` ${pathname == item.path ? "text-ctp-yellow" : ""} text-ctp-lavender" "sm:relative transition-all duration-300 ease-in-out sm:inline-block sm:group-hover:translate-x-2`}
+                className={` ${pathname == item.path ? "text-yellow" : ""} text-magenta" "sm:relative transition-all duration-300 ease-in-out sm:inline-block sm:group-hover:translate-x-2`}
               >
                 {item.name}
               </span>
@@ -160,7 +158,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
           <Link href="/" className="group">
             <span
               className={`relative hidden h-6 w-3.5 text-[1.3rem] sm:inline-block ${
-                pathname === "/" ? "text-ctp-yellow" : "text-ctp-lavender"
+                pathname === "/" ? "text-yellow" : "text-magenta"
               }`}
             >
               {/* Slash */}
@@ -188,7 +186,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
               </span>
             </span>
             <span
-              className={`${pathname == "/" ? "text-ctp-yellow" : "text-ctp-lavender"} transition-all duration-300 ease-in-out sm:relative sm:inline-block sm:group-hover:translate-x-2`}
+              className={`${pathname == "/" ? "text-yellow" : "text-magenta"} transition-all duration-300 ease-in-out sm:relative sm:inline-block sm:group-hover:translate-x-2`}
             >
               Home
             </span>

@@ -33,11 +33,11 @@ export default function RootLayout({
       className={`${spaceMono.variable} ${spaceGrotesk.variable}`}
     >
       <head></head>
-      <body className="bg-ctp-mantle font-grotesk text-ctp-lavender sm:overflow-hidden">
+      <body className="bg-bg font-grotesk text-magenta sm:overflow-hidden">
         <MobileView>{children}</MobileView>
         <div className="mx-auto hidden h-dvh max-w-screen-2xl flex-col text-center sm:flex sm:flex-row">
           <motion.div
-            className="border-ctp-yellow bg-ctp-base m-2 mr-0 hidden flex-col border-r-2 py-10 sm:flex"
+            className="border-yellow bg-bg m-2 mr-0 hidden flex-col border-r-2 py-10 sm:flex"
             initial={{ borderColor: "rgba(249, 226, 175, 0)" }}
             animate={{ borderColor: "rgba(249, 226, 175, 1)" }}
             transition={{ duration: 2 }}
@@ -49,7 +49,7 @@ export default function RootLayout({
               <Footer />
             </div>
           </motion.div>
-          <main className="bg-ctp-base m-2 flex flex-1 grow flex-col overflow-y-auto">
+          <main className="bg-bg m-2 flex flex-1 grow flex-col overflow-y-auto">
             {children}
           </main>
         </div>

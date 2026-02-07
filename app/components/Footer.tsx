@@ -1,4 +1,4 @@
-import CatppuccinWebRing from "./CatppuccinWebRing";
+// import CatppuccinWebRing from "./CatppuccinWebRing";
 import * as motion from "motion/react-client";
 
 export default function Footer() {
@@ -15,9 +15,10 @@ export default function Footer() {
             ease: [0, 0.71, 0.2, 1.01],
           },
         }}
-      >
-        <CatppuccinWebRing />
-      </motion.div>
+      ></motion.div>
+      <p className="px-8 text-left">
+        Vague Webring <sup className="text-[0.3em]">(WIP)</sup>
+      </p>
     </div>
   );
 }
