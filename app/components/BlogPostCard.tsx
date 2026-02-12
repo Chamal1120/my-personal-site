@@ -11,7 +11,7 @@ interface BlogPostProps {
   onClick?: () => void;
 }
 
-const BlogPostCardExt: React.FC<BlogPostProps> = ({
+const BlogPostCard: React.FC<BlogPostProps> = ({
   id,
   title,
   image,

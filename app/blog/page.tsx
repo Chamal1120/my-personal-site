@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import * as motion from "motion/react-client";
-import BlogPostCardExt from "../components/BlogPostCardExt";
+import BlogPostCard from "../components/BlogPostCard";
 
 // Utility: Truncates a string
 const truncateString = (str: string, num: number) => {
@@ -42,8 +42,8 @@ interface DevToArticle {
 
 // Fetches blogs and displays
 export default function BlogPage() {
-  const [externalPosts, setExternalPosts] = useState<DevToArticle[]>([]);
-  const [externalError, setExternalError] = useState<string | null>(null);
+  const [posts, setPosts] = useState<DevToArticle[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -55,9 +55,9 @@ export default function BlogPage() {
         }
 
         const data: DevToArticle[] = await response.json();
-        setExternalPosts(data);
+        setPosts(data);
       } catch (error) {
-        setExternalError(`Error fetching blogs: ${(error as Error).message}`);
+        setError(`Error fetching blogs: ${(error as Error).message}`);
         console.error("Error fetching blogs:", error);
       }
     };
@@ -68,9 +68,9 @@ export default function BlogPage() {
   return (
     <section className="grow px-8 pt-4">
       <div className="flex w-full grow flex-wrap gap-2">
-        {externalError && <p className="text-red-500">{externalError}</p>}{" "}
-        {externalPosts.length > 0 ? (
-          externalPosts.map((post) => (
+        {error && <p className="text-red-500">{error}</p>}{" "}
+        {posts.length > 0 ? (
+          posts.map((post) => (
             <motion.div
               key={post.id}
               className="w-full lg:w-[calc(50%-1rem)]"
@@ -83,7 +83,7 @@ export default function BlogPage() {
               }}
               viewport={{ amount: 0.2 }}
             >
-              <BlogPostCardExt
+              <BlogPostCard
                 id={post.id}
                 key={post.id}
                 title={truncateString(post.title, 37)}

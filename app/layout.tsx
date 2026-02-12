@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Chamal1120",
-  description: "This is Chamal's personal site",
+  description: "Chamal's personal site",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
