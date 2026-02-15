@@ -6,6 +6,10 @@ import MobileView from "./mobileView";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+
 const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],

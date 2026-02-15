@@ -18,7 +18,7 @@ export default function Footer() {
           },
         }}
       ></motion.div>
-        <VagueWebring />
+      <VagueWebring />
     </div>
   );
 }

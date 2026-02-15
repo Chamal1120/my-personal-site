@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
 
 interface BlogPostProps {
-  id?: number; // Make id optional
+  id?: number;
   title: string;
   image: string;
   url: string;
@@ -31,9 +33,10 @@ const BlogPostCard: React.FC<BlogPostProps> = ({
         <p className="text-fg line-clamp-3 text-start text-[0.8rem]">
           {description}
         </p>
-        <div className="text-fg/70 py-4 text-start text-[0.7rem]">
+        <div className="text-fg/70 py-4 text-start text-[0.8rem]">
+          <FontAwesomeIcon icon={faTag} />
           {tags.map((tag, index) => (
-            <span key={index}> #{tag}</span>
+            <span key={index}> {tag}, </span>
           ))}
         </div>
       </div>
@@ -55,4 +58,4 @@ const BlogPostCard: React.FC<BlogPostProps> = ({
   );
 };
 
-export default BlogPostCardExt;
+export default BlogPostCard;

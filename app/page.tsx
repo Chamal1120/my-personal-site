@@ -22,14 +22,16 @@ export default function HomePage() {
             },
           }}
         >
-          <p className="cursor-default duration-1000 ease-in-out">
+          <p className="cursor-default leading-8 duration-1000 ease-in-out">
             {`Hello, My name is `}
             <span className="font-bold">{`Chamal`}</span>
             <span>
-              . I&apos;m a recreational programmer, open source advocate,
-              writer, pc builds enthusiast, gamer and a keyboard nerd.{" "}
-              <span className="underline">Chamal1120</span> is the alias I use
-              for online presence (dev work).
+              . I&apos;m a computer person , open source lover, writer, pc
+              builds enthusiast, gamer and a keyboard nerd.{" "}
+              <span className="bg-yellow text-bg cursor-pointer px-1 py-0 hover:underline">
+                Chamal1120
+              </span>{" "}
+              is the alias I use for online presence (dev work).
             </span>
           </p>
           <br />

@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function VagueWebring() {
   return (
-    <div className="group text-magenta/80 hover:text-magenta flex flex-row sm:pl-2">
+    <div className="group text-magenta/80 hover:text-magenta ml-6.5 flex flex-row sm:pl-2">
       <a
         className="h hover:text-yellow translate-y-0.5 pr-2 transition-all duration-300 ease-in-out hover:-translate-x-0.5"
         href="https://github.com.vague-theme"
       >
         &lt;
       </a>
-      <p className="cursor-default transition-all duration-300 ease-in-out group-hover:-translate-x-0.5">
+      <p className="cursor-default transition-all duration-300 ease-in-out">
         Vague
       </p>
       <a href="https://github.com/vague-theme">
@@ -22,7 +22,7 @@ export default function VagueWebring() {
           ></Image>
         </div>
       </a>
-      <p className="cursor-default transition-all duration-300 ease-in-out group-hover:translate-x-0.5">
+      <p className="cursor-default transition-all duration-300 ease-in-out">
         webring
       </p>
       <a

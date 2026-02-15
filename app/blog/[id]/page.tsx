@@ -186,7 +186,7 @@ export default function BlogPostPage() {
   return (
     <section className="grow px-8 pt-4">
       <div className="mx-auto max-w-3xl">
-        <h1 className="mb-4 text-4xl font-bold">{post.title}</h1>
+        {/** <h1 className="mb-4 text-4xl font-bold">{post.title}</h1> */}
         {post.cover_image && (
           <div className="mb-4">
             <Image

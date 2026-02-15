@@ -2,6 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as motion from "motion/react-client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
 
 const navItems = [
   { name: "Projects", path: "/projects" },
@@ -11,9 +14,13 @@ const navItems = [
 
 const socials = [
   // { name: "Discord", path: "" },
-  { name: "Email", path: "mailto:chamal.randika.mcr@gmail.com" },
-  { name: "GitHub", path: "https://github.com/Chamal1120/" },
-  { name: "YouTube", path: "https://www.youtube.com/@unixphile" },
+  { name: "Email", path: "mailto:chamal.randika.mcr@gmail.com", icon: faAt },
+  { name: "GitHub", path: "https://github.com/Chamal1120/", icon: faGithub },
+  {
+    name: "YouTube",
+    path: "https://www.youtube.com/@unixphile",
+    icon: faYoutube,
+  },
 ];
 
 type NavProps = {
@@ -63,6 +70,9 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
               >
                 <Link target="_blank" href={item.path} key={item.name}>
                   <div className="group flex flex-row gap-1 pb-2">
+                    <div className="group-hover:text-yellow pr-1 pb-2">
+                      <FontAwesomeIcon icon={item.icon} />
+                    </div>
                     <p className="group-hover:text-yellow group-hover:underline">
                       {item.name}
                     </p>
