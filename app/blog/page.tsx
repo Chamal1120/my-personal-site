@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import * as motion from "motion/react-client";
 import BlogPostCard from "../components/BlogPostCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 // Utility: Truncates a string
 const truncateString = (str: string, num: number) => {
@@ -43,12 +46,15 @@ interface DevToArticle {
 // Fetches blogs and displays
 export default function BlogPage() {
   const [posts, setPosts] = useState<DevToArticle[]>([]);
+  const [page, setPage] = useState<number>(1);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch(`/api/devto/articles?per_page=9`);
+        const response = await fetch(
+          `/api/devto/articles?per_page=10&page=${page}`,
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -63,7 +69,7 @@ export default function BlogPage() {
     };
 
     fetchBlogs().catch(console.error);
-  }, []);
+  }, [page]);
 
   return (
     <section className="grow px-8 pt-4">
@@ -119,6 +125,22 @@ export default function BlogPage() {
             <span className="sr-only">Loading blogs...</span>
           </div>
         )}
+      </div>
+      <div className="m-4 flex justify-center gap-4">
+        <button
+          onClick={() => setPage((p) => Math.max(p - 1, 1))}
+          disabled={page === 1}
+          className="bg-fg/10 disabled:text-fg/20 text-yellow cursor-pointer rounded-full px-2.5 py-2 transition duration-150 ease-in-out active:scale-90"
+        >
+          <FontAwesomeIcon icon={faAngleLeft} />
+        </button>
+        <button
+          onClick={() => setPage((p) => p + 1)}
+          disabled={posts.length < 10}
+          className="bg-fg/10 disabled:text-fg/20 text-yellow cursor-pointer rounded-full px-2.5 py-2 active:scale-90"
+        >
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
       </div>
     </section>
   );
