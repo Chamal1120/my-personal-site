@@ -1,14 +1,17 @@
 import { NextResponse } from "next/server";
 
+const DEVTO_CACHE_TAG = "devto-articles";
+const ONE_WEEK_IN_SECONDS = 60 * 60 * 24 * 7;
+
 export async function GET(
-  request: Request,
+  _request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
 
-  if (!id) {
+  if (!/^\d+$/.test(id)) {
     return NextResponse.json(
-      { error: "Article ID is required." },
+      { error: "A valid article ID is required." },
       { status: 400 },
     );
   }
@@ -16,7 +19,12 @@ export async function GET(
   const apiUrl = `https://dev.to/api/articles/${id}`;
 
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, {
+      next: {
+        revalidate: ONE_WEEK_IN_SECONDS,
+        tags: [DEVTO_CACHE_TAG],
+      },
+    });
 
     if (!response.ok) {
       if (response.status === 404) {

@@ -9,11 +9,11 @@ export default function ProjectsPage() {
   return (
     <div>
       <section>
-        <ul className="m-0 flex list-none flex-row flex-wrap gap-2 p-0 px-4 pt-4">
-          {projects.map((project, index) => (
+        <ul className="m-0 grid list-none grid-cols-1 items-stretch gap-6 p-6 lg:grid-cols-2">
+          {projects.map((project) => (
             <motion.li
-              key={index}
-              className="w-full cursor-default lg:w-[calc(50%-1rem)]"
+              key={project.slug}
+              className="h-full w-full cursor-default"
               initial={{ opacity: 0, y: 10 }}
               whileHover={{
                 y: -2,
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
               }}
               viewport={{ amount: 0.2 }}
             >
-              <ProjectCard key={index} {...project} />
+              <ProjectCard {...project} />
             </motion.li>
           ))}
         </ul>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as motion from "motion/react-client";
 import BlogPostCard from "../components/BlogPostCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -48,6 +48,22 @@ export default function BlogPage() {
   const [posts, setPosts] = useState<DevToArticle[]>([]);
   const [page, setPage] = useState<number>(1);
   const [error, setError] = useState<string | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const changePage = (nextPage: number) => {
+    setPage(nextPage);
+
+    let parent = sectionRef.current?.parentElement;
+
+    while (parent) {
+      if (parent.scrollHeight > parent.clientHeight) {
+        parent.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      parent = parent.parentElement;
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -72,14 +88,14 @@ export default function BlogPage() {
   }, [page]);
 
   return (
-    <section className="grow px-8 pt-4">
-      <div className="flex w-full grow flex-wrap gap-2">
+    <section ref={sectionRef} className="grow">
+      <div className="grid w-full grow grid-cols-1 items-stretch gap-6 p-6 lg:grid-cols-2">
         {error && <p className="text-red-500">{error}</p>}{" "}
         {posts.length > 0 ? (
           posts.map((post) => (
             <motion.div
               key={post.id}
-              className="w-full lg:w-[calc(50%-1rem)]"
+              className="h-full w-full"
               initial={{ opacity: 0, y: 10 }}
               whileHover={{ y: -2 }}
               whileInView={{
@@ -94,7 +110,7 @@ export default function BlogPage() {
                 key={post.id}
                 title={truncateString(post.title, 37)}
                 description={post.description ?? ""}
-                image={post.cover_image ?? ""}
+                image={post.cover_image}
                 url={post.canonical_url ?? ""}
                 tags={post.tag_list ?? []}
               />
@@ -128,14 +144,14 @@ export default function BlogPage() {
       </div>
       <div className="m-4 flex justify-center gap-4">
         <button
-          onClick={() => setPage((p) => Math.max(p - 1, 1))}
+          onClick={() => changePage(Math.max(page - 1, 1))}
           disabled={page === 1}
           className="bg-fg/10 disabled:text-fg/20 text-yellow cursor-pointer rounded-full px-2.5 py-2 transition duration-150 ease-in-out active:scale-90"
         >
           <FontAwesomeIcon icon={faAngleLeft} />
         </button>
         <button
-          onClick={() => setPage((p) => p + 1)}
+          onClick={() => changePage(page + 1)}
           disabled={posts.length < 10}
           className="bg-fg/10 disabled:text-fg/20 text-yellow cursor-pointer rounded-full px-2.5 py-2 active:scale-90"
         >

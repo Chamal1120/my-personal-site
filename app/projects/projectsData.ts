@@ -1,5 +1,15 @@
-export const projects = [
+export interface Project {
+  slug: string;
+  title: string;
+  description: string;
+  technologies: string;
+  sourceCodeLink: string;
+  previewLink: string | null;
+}
+
+export const projects: Project[] = [
   {
+    slug: "chace",
     title: "An LLM based code completion engine",
     description:
       "Extracts the function signatures of empty functions and generates the implementation using an LLM of choice with support for user-provided contextual snippets.",
@@ -9,6 +19,7 @@ export const projects = [
     previewLink: null,
   },
   {
+    slug: "blazelint",
     title: "High performance code linter using Rust (FYP)",
     description:
       "A reference code linter implementation targetted for Ballerina language using Rust ecosystem. This studies the viability of Rust for implementing code analysis tools for other languages.",
@@ -17,6 +28,7 @@ export const projects = [
     previewLink: null,
   },
   {
+    slug: "cv-submission-automator",
     title: "An automated resume processing pipeline",
     description:
       "Provides a fully automated workflow from the candidate’s submission to the recruiter’s review. Lambda functions provides robust scalability while being cost efficient (1 million applications per month costs only 28 USD).",
@@ -25,6 +37,7 @@ export const projects = [
     previewLink: null,
   },
   {
+    slug: "facetimehd-toggle",
     title: "facetimehd Toggle",
     description:
       "A gtk systray applet to control the webcam kernel module for intel macbooks running GNU/Linux to overcome suspend/ resume issues. This can also increase the privacy as the toggler detaches the driver from kernel.",
@@ -33,6 +46,7 @@ export const projects = [
     previewLink: null,
   },
   {
+    slug: "slnic-decoder",
     title: "SLNIC Decoder",
     description:
       "A mobile app to decode the Sri Lankan NIC number that follows latest material 3 design. Implemented a full CI/CD pipeline for testing, building and publishing signed APK releases. There's also a 1:1 Figma prototype.",
@@ -41,6 +55,7 @@ export const projects = [
     previewLink: null,
   },
   {
+    slug: "macbookpro-linux-fixes",
     title: "Macbook Pro 12,1 Linux Fixes",
     description:
       "An installable aur package to get wifi, bluetooth and thermals working in GNU/Linux. This combines many fixes that I have salvaged from rubreddits, arch wiki and other various conversation threads",
@@ -50,3 +65,6 @@ export const projects = [
     previewLink: null,
   },
 ];
+
+export const getProjectBySlug = (slug: string) =>
+  projects.find((project) => project.slug === slug);

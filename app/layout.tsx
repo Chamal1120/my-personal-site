@@ -42,8 +42,8 @@ export default function RootLayout({
         <div className="mx-auto hidden h-dvh max-w-screen-2xl flex-col text-center sm:flex sm:flex-row">
           <motion.div
             className="border-yellow bg-bg m-2 mr-0 hidden flex-col border-r-2 py-10 sm:flex"
-            initial={{ borderColor: "rgba(249, 226, 175, 0)" }}
-            animate={{ borderColor: "rgba(249, 226, 175, 1)" }}
+            initial={{ borderColor: "var(--bg)" }}
+            animate={{ borderColor: "var(--yellow)" }}
             transition={{ duration: 2 }}
           >
             <div className="flex grow flex-col">

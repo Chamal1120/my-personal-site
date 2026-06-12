@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 504" role="img" aria-labelledby="title description">
+  <title id="title">Content placeholder</title>
+  <desc id="description">Abstract code-themed illustration in the site's color palette</desc>
+  <rect width="1200" height="504" fill="#141415"/>
+  <circle cx="1040" cy="70" r="250" fill="#252530"/>
+  <circle cx="170" cy="460" r="230" fill="#252530"/>
+  <path d="M0 390 250 220l210 135 260-210 480 300v59H0Z" fill="#1d1d22"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m445 168-92 84 92 84" stroke="#bb9dbd" stroke-width="22"/>
+    <path d="m755 168 92 84-92 84" stroke="#bb9dbd" stroke-width="22"/>
+    <path d="m655 126-110 252" stroke="#f3be7c" stroke-width="22"/>
+  </g>
+  <g fill="#cdcdcd" opacity=".35">
+    <rect x="70" y="70" width="210" height="12" rx="6"/>
+    <rect x="70" y="102" width="130" height="12" rx="6"/>
+    <rect x="920" y="390" width="210" height="12" rx="6"/>
+    <rect x="1000" y="422" width="130" height="12" rx="6"/>
+  </g>
+</svg>
