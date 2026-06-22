@@ -28,6 +28,17 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const themeScript = `
+(() => {
+  try {
+    const theme = localStorage.getItem("theme");
+    if (theme === "light" || theme === "dark") {
+      document.documentElement.dataset.theme = theme;
+    }
+  } catch {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -35,8 +46,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${spaceMono.variable} ${spaceGrotesk.variable}`}
+      suppressHydrationWarning
     >
-      <head></head>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="bg-bg font-grotesk text-magenta sm:overflow-hidden">
         <MobileView>{children}</MobileView>
         <div className="mx-auto hidden h-dvh max-w-screen-2xl flex-col text-center sm:flex sm:flex-row">

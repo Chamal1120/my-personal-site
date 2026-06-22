@@ -8,9 +8,11 @@ export default function Footer() {
     <div className="flex flex-col">
       <motion.div
         className="flex flex-1 px-5 text-sm sm:flex-none"
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
         animate={{
           opacity: 1,
+          filter: "blur(0px)",
+          y: 0,
           transition: {
             delay: 0.6,
             duration: 1.5,

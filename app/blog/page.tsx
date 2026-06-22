@@ -119,7 +119,7 @@ export default function BlogPage() {
         ) : (
           <div
             role="status"
-            className="flex min-h-screen w-full grow items-center justify-center"
+            className="col-span-full flex min-h-88 w-full items-center justify-center"
           >
             <svg
               aria-hidden="true"

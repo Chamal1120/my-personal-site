@@ -32,7 +32,7 @@ export default function MobileView({
         </div>
         <div
           className={`pb-2 transition-all duration-500 ease-in-out ${showNav ? "translate-y-0 opacity-100" : "translate-y-full overflow-hidden opacity-0"}`}
-          style={{ height: !showNav ? "0rem" : "12rem" }}
+          style={{ height: !showNav ? "0rem" : "15rem" }}
         >
           <Navbar showNav={showNav} setShowNav={setShowNav} />
         </div>

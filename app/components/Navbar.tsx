@@ -5,6 +5,7 @@ import * as motion from "motion/react-client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const navItems = [
   { name: "Projects", path: "/projects" },
@@ -37,9 +38,10 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
         <Link href="/" className="hidden sm:block">
           <motion.span
             className="text-yellow hover:text-magenta relative inline-block pb-1 font-sans text-4xl font-bold"
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, filter: "blur(10px)", y: -10 }}
             animate={{
               opacity: 1,
+              filter: "blur(0px)",
               y: 0,
               transition: {
                 delay: 0.3,
@@ -57,9 +59,10 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
             {socials.map((item) => (
               <motion.li
                 key={item.path}
-                initial={{ opacity: 0, y: -10 }}
+                initial={{ opacity: 0, filter: "blur(10px)", y: -10 }}
                 animate={{
                   opacity: 1,
+                  filter: "blur(0px)",
                   y: 0,
                   transition: {
                     delay: 0.9,
@@ -97,6 +100,7 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
               </motion.li>
             ))}
           </ul>
+          <ThemeSwitcher />
         </div>
       </div>
 
@@ -106,9 +110,10 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
             onClick={() => setShowNav?.(!showNav)}
             key={item.path}
             className="text-center font-semibold sm:text-left"
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
             animate={{
               opacity: 1,
+              filter: "blur(0px)",
               y: 0,
               transition: {
                 delay: 0.5,
@@ -158,9 +163,10 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
         <motion.li
           onClick={() => setShowNav?.(!showNav)}
           className="text-center font-semibold sm:text-left"
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
           animate={{
             opacity: 1,
+            filter: "blur(0px)",
             y: 0,
             transition: { delay: 0.5, duration: 1, ease: [0, 0.71, 0.2, 1.01] },
           }}
@@ -203,6 +209,9 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
           </Link>
         </motion.li>
       </ul>
+      <div className="flex justify-center sm:hidden">
+        <ThemeSwitcher />
+      </div>
     </nav>
   );
 };

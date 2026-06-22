@@ -4,6 +4,58 @@
    VAGUE COLORSCHEME
 ------------------------------ */
 :root {
+  color-scheme: dark;
+
+  --bg: #141415;
+  --fg: #cdcdcd;
+
+  --black: #252530;
+  --red: #d8647e;
+  --green: #7fa563;
+  --yellow: #f3be7c;
+  --blue: #6e94b2;
+  --magenta: #bb9dbd;
+  --cyan: #aeaed1;
+  --white: #cdcdcd;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+
+    --bg: #f2eef4;
+    --fg: #141415;
+
+    --black: #d9d3df;
+    --red: #b84c6d;
+    --green: #5d7f47;
+    --yellow: #7f5c86;
+    --blue: #4f7694;
+    --magenta: #141415;
+    --cyan: #626498;
+    --white: #141415;
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f2eef4;
+  --fg: #141415;
+
+  --black: #d9d3df;
+  --red: #b84c6d;
+  --green: #5d7f47;
+  --yellow: #7f5c86;
+  --blue: #4f7694;
+  --magenta: #141415;
+  --cyan: #626498;
+  --white: #141415;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
   --bg: #141415;
   --fg: #cdcdcd;
 

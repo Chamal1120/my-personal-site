@@ -26,8 +26,8 @@ Dev.to article lists and article details are cached by Next.js for seven days.
 Set these environment variables locally and in Vercel:
 
 ```env
-DEVTO_API_KEY=your-devto-api-key
-DEVTO_REVALIDATE_SECRET=a-long-random-secret
+DEVTO_USERNAME=<your-username>
+DEVTO_REVALIDATE_SECRET=<your-crazy-secret-string>
 ```
 
 If `DEVTO_REVALIDATE_SECRET` is not set, the endpoint falls back to Vercel's

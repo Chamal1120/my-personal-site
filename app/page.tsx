@@ -10,14 +10,16 @@ export default function HomePage() {
           className="text-justify font-semibold sm:mx-10"
           initial={{
             opacity: 0,
-            y: 10,
+            filter: "blur(8px)",
+            y: 8,
           }}
           animate={{
             opacity: 1,
+            filter: "blur(0px)",
             y: 0,
             transition: {
               delay: 0.2,
-              duration: 1.5,
+              duration: 1.6,
               ease: [0, 0.71, 0.2, 1.01],
             },
           }}
