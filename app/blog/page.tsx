@@ -89,7 +89,7 @@ export default function BlogPage() {
 
   return (
     <section ref={sectionRef} className="grow">
-      <div className="grid w-full grow grid-cols-1 items-stretch gap-6 p-6 lg:grid-cols-2">
+      <div className="grid w-full grow grid-cols-1 items-stretch gap-6 p-4 sm:p-6 lg:grid-cols-2">
         {error && <p className="text-red-500">{error}</p>}{" "}
         {posts.length > 0 ? (
           posts.map((post) => (

@@ -137,7 +137,7 @@ export default async function ProjectPage({
       >
         Back to projects
       </Link>
-      <header className="mb-8 border-b border-white/20 pb-6">
+      <header className="mb-8 border-b border-fg/20 pb-6">
         <h1 className="text-magenta text-3xl font-bold">{project.title}</h1>
         <p className="text-fg mt-3">{project.description}</p>
         <a

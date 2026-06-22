@@ -142,7 +142,7 @@ export default function BlogPostPage() {
 
   if (loading)
     return (
-      <section className="grow px-8 pt-4">
+      <section className="grow px-4 pt-4 sm:px-8">
         <div
           role="status"
           className="flex min-h-screen w-full grow items-center justify-center"
@@ -171,31 +171,31 @@ export default function BlogPostPage() {
 
   if (error)
     return (
-      <section className="grow px-8 pt-4">
+      <section className="grow px-4 pt-4 sm:px-8">
         <p className="text-red-500">{error}</p>
       </section>
     );
 
   if (!post)
     return (
-      <section className="grow px-8 pt-4">
+      <section className="grow px-4 pt-4 sm:px-8">
         <p>Blog post not found.</p>
       </section>
     );
 
   return (
-    <section className="grow px-8 pt-4">
+    <section className="grow px-4 pt-4 sm:px-8">
       <div className="w-full">
         {/** <h1 className="mb-4 text-4xl font-bold">{post.title}</h1> */}
         {post.cover_image && (
-          <div className="mx-auto mb-4 max-w-3xl">
+          <div className="mx-auto mb-4 w-full max-w-3xl">
             <Image
               src={post.cover_image}
               alt={post.title}
-              width={1000}
-              height={420}
-              layout="responsive"
-              objectFit="cover"
+              width={1200}
+              height={630}
+              className="h-auto w-full"
+              sizes="(max-width: 768px) 100vw, 768px"
             />
           </div>
         )}
@@ -207,7 +207,7 @@ export default function BlogPostPage() {
           ))}
         </div>
         {content.length > 0 && (
-          <div className="prose prose-invert max-w-none text-left text-white">
+          <div className="prose prose-invert max-w-none break-words text-left text-white">
             <style jsx>{`
               div :global(p) {
                 margin-bottom: 1.5rem;
@@ -216,6 +216,8 @@ export default function BlogPostPage() {
               div :global(img) {
                 margin-top: 2rem;
                 margin-bottom: 2rem;
+                max-width: 100%;
+                height: auto;
               }
               div :global(pre) {
                 margin-top: 2rem;

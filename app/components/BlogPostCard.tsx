@@ -25,22 +25,24 @@ const BlogPostCard: React.FC<BlogPostProps> = ({
 
   const content = (
     <div className="flex h-full flex-col">
-      <div className="relative aspect-[50/21] w-full overflow-hidden">
+      <div className="relative w-full">
         <Image
           src={imageSource}
           alt={image ? title : ""}
-          fill
-          className="object-cover"
+          width={1200}
+          height={630}
+          className="h-auto w-full"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
-      <div className="bg-bg/50 hover:bg-fg/5 flex grow flex-col gap-4 p-6">
-        <h3 className="text-md text-magenta text-start font-semibold tracking-wide uppercase">
+      <div className="bg-bg/50 hover:bg-fg/5 flex grow flex-col gap-4 p-4 sm:p-6">
+        <h3 className="text-md text-magenta break-words text-start font-semibold tracking-wide uppercase">
           {title}
         </h3>
-        <p className="text-fg line-clamp-3 text-start text-[0.8rem]">
+        <p className="text-fg line-clamp-3 break-words text-start text-[0.8rem]">
           {description}
         </p>
-        <div className="text-fg/70 mt-auto pt-2 text-start text-[0.8rem]">
+        <div className="text-fg/70 mt-auto break-words pt-2 text-start text-[0.8rem]">
           <FontAwesomeIcon icon={faTag} />
           {tags.map((tag, index) => (
             <span key={index}> {tag}, </span>

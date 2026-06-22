@@ -26,8 +26,8 @@ export default function MobileView({
             <HamburgerButton showNav={showNav} setShowNav={setShowNav} />
           </div>
         </div>
-        <div className="flex grow flex-col items-center justify-center overflow-y-auto">
-          <main className="bg-bg m-2 grow overflow-y-auto">{children}</main>
+        <div className="flex grow flex-col items-center justify-center overflow-x-hidden overflow-y-auto">
+          <main className="bg-bg mx-1 my-2 w-full grow overflow-y-auto sm:m-2">{children}</main>
           <Footer />
         </div>
         <div

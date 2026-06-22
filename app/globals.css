@@ -129,7 +129,8 @@
 }
 
 .readme-content h2 {
-  border-bottom: 1px solid rgb(255 255 255 / 20%);
+  border-bottom: 1px solid var(--fg);
+  border-bottom-color: color-mix(in srgb, var(--fg) 20%, transparent);
   font-size: 1.5rem;
   padding-bottom: 0.4rem;
 }
@@ -143,7 +144,7 @@
 }
 
 .readme-content p {
-  color: rgb(205 205 205 / 90%);
+  color: var(--fg);
 }
 
 .readme-content strong {
@@ -171,16 +172,17 @@
 }
 
 .readme-content blockquote {
-  background: rgb(37 37 48 / 55%);
+  background: var(--black);
   border-left: 3px solid var(--magenta);
   border-radius: 0 0.4rem 0.4rem 0;
-  color: rgb(205 205 205 / 75%);
+  color: var(--fg);
   padding: 0.75rem 1rem;
 }
 
 .readme-content code {
   background: var(--black);
-  border: 1px solid rgb(255 255 255 / 8%);
+  border: 1px solid var(--fg);
+  border-color: color-mix(in srgb, var(--fg) 12%, transparent);
   border-radius: 0.25rem;
   color: var(--yellow);
   font-family: var(--font-space-mono), monospace;
@@ -190,7 +192,8 @@
 
 .readme-content pre {
   background: var(--black);
-  border: 1px solid rgb(255 255 255 / 12%);
+  border: 1px solid var(--fg);
+  border-color: color-mix(in srgb, var(--fg) 15%, transparent);
   border-radius: 0.5rem;
   overflow-x: auto;
   padding: 1rem;
@@ -211,7 +214,8 @@
 
 .readme-content hr {
   border: 0;
-  border-top: 1px solid rgb(255 255 255 / 20%);
+  border-top: 1px solid var(--fg);
+  border-top-color: color-mix(in srgb, var(--fg) 20%, transparent);
   margin: 2rem 0;
 }
 
@@ -224,12 +228,13 @@
 }
 
 .readme-content thead {
-  background: rgb(37 37 48 / 75%);
+  background: var(--black);
 }
 
 .readme-content th,
 .readme-content td {
-  border: 1px solid rgb(255 255 255 / 20%);
+  border: 1px solid var(--fg);
+  border-color: color-mix(in srgb, var(--fg) 20%, transparent);
   padding: 0.5rem;
 }
 

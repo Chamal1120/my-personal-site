@@ -209,9 +209,6 @@ const Navbar = ({ showNav, setShowNav }: NavProps) => {
           </Link>
         </motion.li>
       </ul>
-      <div className="flex justify-center sm:hidden">
-        <ThemeSwitcher />
-      </div>
     </nav>
   );
 };
