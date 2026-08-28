@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import * as motion from "motion/react-client";
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "./projects/projectsData";
 import { configData } from "./config/configData";
 import ArrowLink from "./components/ArrowLink";
@@ -49,14 +50,69 @@ export default function HomePage() {
   }, []);
 
   const socials = [
-    { label: "email", href: "mailto:chamal.randika.mcr@gmail.com", title: "Email" },
+    { label: "em", href: "mailto:chamal.randika.mcr@gmail.com", title: "Email" },
     { label: "gh", href: "https://github.com/Chamal1120/", title: "GitHub" },
     {
       label: "yt",
       href: "https://www.youtube.com/@unixphile",
       title: "YouTube",
     },
+    {
+      label: "li",
+      href: "https://www.linkedin.com/in/chamalrandika/",
+      title: "LinkedIn",
+    },
   ];
+
+  const [effectiveTheme, setEffectiveTheme] = useState<"light" | "dark">(
+    "dark",
+  );
+
+  useEffect(() => {
+    const update = () => {
+      const root = document.documentElement;
+      if (root.dataset.theme) {
+        setEffectiveTheme(
+          root.dataset.theme === "light" ? "light" : "dark",
+        );
+      } else {
+        setEffectiveTheme(
+          window.matchMedia("(prefers-color-scheme: light)").matches
+            ? "light"
+            : "dark",
+        );
+      }
+    };
+    update();
+    const mq = window.matchMedia("(prefers-color-scheme: light)");
+    window.addEventListener("themechange", update);
+    window.addEventListener("storage", update);
+    mq.addEventListener("change", update);
+    return () => {
+      window.removeEventListener("themechange", update);
+      window.removeEventListener("storage", update);
+      mq.removeEventListener("change", update);
+    };
+  }, []);
+
+  const graphTheme =
+    effectiveTheme === "light"
+      ? {
+          colors: "f5ebf7,cdb9d2,b093b8,9774a0,7f5c86",
+          textColor: "141415",
+          darkMode: "false",
+        }
+      : {
+          colors: "1f1b14,3a3524,6b5f30,b08b40,f3be7c",
+          textColor: "cdcdcd",
+          darkMode: "true",
+        };
+
+  const contributionGraphUrl =
+    `/api/github/contributions` +
+    `?colors=${graphTheme.colors}` +
+    `&textColor=${graphTheme.textColor}` +
+    `&darkMode=${graphTheme.darkMode}`;
 
   return (
     <div>
@@ -86,7 +142,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={social.title}
-                className="text-yellow hover:text-cyan transition-colors"
+                className="social-link text-yellow hover:text-cyan transition-colors"
               >
                 {social.label}
               </a>
@@ -100,7 +156,7 @@ export default function HomePage() {
           I&apos;m a computer person, open source lover, writer, PC builds
           enthusiast, gamer and a keyboard nerd focused on systems designing,
           web dev and agentic automation. I go by the alias {" "} 
-          <span className="text-yellow">Chamal1120</span> online (dev work). 
+          <span className="text-yellow"><a href="https://github.com/chamal1120" target="blank">Chamal1120</a></span> online (dev work). 
         </motion.p>
         <motion.p variants={createFade(0.26)} className="mb-3">
           <ArrowLink href="/about">read my full story</ArrowLink>
@@ -172,10 +228,17 @@ export default function HomePage() {
                 {item.label}
               </span>
               <span className="text-fg">
-                {item.links
-                  .map((link) => link.text)
-                  .slice(0, 1)
-                  .join(", ")}
+                {item.links.slice(0, 1).map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {link.text}
+                  </a>
+                ))}
               </span>
             </div>
           ))}
@@ -190,7 +253,17 @@ export default function HomePage() {
         <div className="space-y-4">
           <div className="flex items-baseline justify-between gap-4">
             <div>
-              <p className="text-fg font-medium">Engineering Intern · WSO2</p>
+              <p className="text-fg font-medium">
+                Engineering Intern ·{" "}
+                <a
+                  href="https://wso2.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  WSO2
+                </a>
+              </p>
               <p className="text-fg/60 text-sm">
                 Designed, built and delivered agentic automations to the
                 internal patching team.
@@ -203,7 +276,24 @@ export default function HomePage() {
           <div className="flex items-baseline justify-between gap-4">
             <div>
               <p className="text-fg font-medium">
-                Technical Content Creator · YouTube / Dev.to
+                Technical Content Creator ·{" "}
+                <a
+                  href="https://www.youtube.com/@unixphile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  YouTube
+                </a>{" "}
+                /{" "}
+                <a
+                  href="https://dev.to/chamal1120"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Dev.to
+                </a>
               </p>
               <p className="text-fg/60 text-sm">
                 Talks and writes about Linux, open source and CLI workflows.
@@ -244,21 +334,31 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Contact */}
-      <Section title="Reach me">
-        <p className="text-fg/60 mb-3 text-sm">
-          Open to collaborations, interesting problems and tech talk.
-        </p>
-        <div className="mb-5">
-          <ArrowLink href="mailto:chamal.randika.mcr@gmail.com" external>
-            chamal.randika.mcr@gmail.com
-          </ArrowLink>
+      {/* GitHub Activity */}
+      <Section title="GitHub Activity">
+        <div className="flex flex-col items-stretch gap-4">
+          <a
+            href="https://github.com/Chamal1120/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-fg/20 border-bg/50 flex overflow-hidden rounded-lg border bg-bg/50 p-3"
+          >
+            <Image
+              src={contributionGraphUrl}
+              alt="Chamal1120 GitHub contribution graph"
+              className="w-full"
+              width={800}
+              height={146}
+              loading="lazy"
+              unoptimized
+            />
+          </a>
         </div>
-        <ThemeSwitcher />
       </Section>
 
       {/* Footer */}
-      <footer className="text-fg/40 border-fg/20 mt-8 border-t border-dotted pt-8 text-center text-sm">
+      <footer className="text-fg/40 border-fg/20 mt-8 flex flex-col items-center gap-4 border-t border-dotted pt-8 text-center text-sm">
+        <ThemeSwitcher />
         built with things I love
       </footer>
     </div>

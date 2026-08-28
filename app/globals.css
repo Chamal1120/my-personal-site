@@ -23,7 +23,7 @@
   :root:not([data-theme]) {
     color-scheme: light;
 
-    --bg: #f2eef4;
+    --bg: #faf5e8;
     --fg: #141415;
 
     --black: #d9d3df;
@@ -40,7 +40,7 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --bg: #f2eef4;
+  --bg: #faf5e8;
   --fg: #141415;
 
   --black: #d9d3df;
@@ -88,6 +88,29 @@
   /* Fonts */
   --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+}
+
+/* ------------------------------
+   LIGHT-MODE OVERRIDES
+------------------------------ */
+:root[data-theme="light"] .social-link,
+:root[data-theme="light"] .social-link:hover {
+  color: var(--red);
+}
+
+:root[data-theme="light"] .arrow-icon {
+  color: var(--red);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .social-link,
+  :root:not([data-theme]) .social-link:hover {
+    color: var(--red);
+  }
+
+  :root:not([data-theme]) .arrow-icon {
+    color: var(--red);
+  }
 }
 
 /* ------------------------------

@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 const DEVTO_USERNAME = process.env.DEVTO_USERNAME ?? "chamal1120";
 const DEVTO_CACHE_TAG = "devto-articles";
 const ONE_WEEK_IN_SECONDS = 60 * 60 * 24 * 7;
+const FETCH_TIMEOUT_MS = 5000;
 
 const getPositiveInteger = (
   value: string | null,
@@ -33,6 +34,7 @@ export async function GET(request: Request) {
 
   try {
     const response = await fetch(apiUrl, {
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       next: {
         revalidate: ONE_WEEK_IN_SECONDS,
         tags: [DEVTO_CACHE_TAG],

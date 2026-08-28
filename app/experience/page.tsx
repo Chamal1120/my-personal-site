@@ -1,8 +1,9 @@
 import * as motion from "motion/react-client";
+import { ReactNode } from "react";
 
 interface Role {
   title: string;
-  org: string;
+  org: ReactNode;
   period: string;
   bullets: string[];
 }
@@ -10,7 +11,19 @@ interface Role {
 const roles: Role[] = [
   {
     title: "Intern - Engineering (API Manager Team)",
-    org: "WSO2 · Colombo, Sri Lanka · On-site",
+    org: (
+      <>
+        <a
+          href="https://wso2.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          WSO2
+        </a>
+        {" · Colombo, Sri Lanka · On-site"}
+      </>
+    ),
     period: "Feb 2026 — Aug 2026",
     bullets: [
       "Designed and built an AI driven patch analysis agent reaching 75% accuracy in identifying regression scenarios, parsing the patch diff alongside its linked PRs and issue history to surface gaps that existing test suite misses.",
@@ -21,7 +34,28 @@ const roles: Role[] = [
   },
   {
     title: "Technical Content Creator",
-    org: "dev.to/chamal1120 · youtube.com/@unixphile · Remote",
+    org: (
+      <>
+        <a
+          href="https://dev.to/chamal1120"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          dev.to
+        </a>
+        {" / "}
+        <a
+          href="https://www.youtube.com/@unixphile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          YouTube
+        </a>
+        {" · Remote"}
+      </>
+    ),
     period: "May 2024 — Present",
     bullets: [
       "Publish articles on GNU/Linux, Unix, shell scripting and CLI workflows. Captured over 63K views across 16 articles.",
@@ -59,7 +93,7 @@ export default function ExperiencePage() {
         {roles.map((role, i) => (
           <motion.div
             key={role.title}
-            className="border-fg/20 border-b border-dotted pb-6 last:border-b-0"
+            className="border-fg/20 border-b border-dotted py-6 last:border-b-0"
             initial={{ opacity: 0, y: 12 }}
             animate={{
               opacity: 1,
