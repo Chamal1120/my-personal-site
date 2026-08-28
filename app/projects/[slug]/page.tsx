@@ -130,21 +130,23 @@ export default async function ProjectPage({
   const readme = await fetchReadme(project.sourceCodeLink);
 
   return (
-    <section className="w-full px-6 py-8 text-left">
+    <section className="w-full text-left">
       <Link
         href="/projects"
-        className="text-yellow mb-6 inline-block hover:underline"
+        className="group text-fg/70 hover:text-yellow mb-6 inline-flex items-center text-sm transition-colors"
       >
-        Back to projects
+        <span className="group-hover:underline">back to projects</span>
       </Link>
-      <header className="mb-8 border-b border-fg/20 pb-6">
-        <h1 className="text-magenta text-3xl font-bold">{project.title}</h1>
-        <p className="text-fg mt-3">{project.description}</p>
+      <header className="border-fg/20 mb-8 border-b border-dotted pb-6">
+        <h1 className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl">
+          {project.title}
+        </h1>
+        <p className="text-fg/70 mt-3">{project.description}</p>
         <a
           href={project.sourceCodeLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-yellow mt-4 inline-block hover:underline"
+          className="text-yellow hover:text-cyan mt-4 inline-block text-sm transition-colors hover:underline"
         >
           View source code
         </a>

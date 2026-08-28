@@ -12,11 +12,11 @@ const EducationCard: React.FC<EducationProps> = ({
   link,
 }) => {
   return (
-    <div className="flex flex-col py-6">
-      <h3 className="text-start"> {course} </h3>
-      <h4 className="text-start"> {institution} </h4>
-      <p className="text-start"> {duration} </p>
-      {link ? <p className="text-start"> {link} </p> : null}
+    <div className="border-fg/20 flex flex-col gap-0.5 border-b border-dotted py-5 last:border-b-0">
+      <span className="text-fg font-medium">{course}</span>
+      <span className="text-fg/60">{institution}</span>
+      <span className="text-fg/40 font-mono text-sm">{duration}</span>
+      {link ? <span className="text-fg/40 text-sm">{link}</span> : null}
     </div>
   );
 };

@@ -1,25 +1,50 @@
+import * as motion from "motion/react-client";
+import ArrowLink from "../components/ArrowLink";
+
 export default function ContactPage() {
   return (
     <section>
-      <h2 className="pb-6 text-3xl font-bold">Ways you can contact me.</h2>
-      <div className="flex flex-row justify-center gap-4 pb-36">
-        <a
-          className="text-lg hover:underline"
-          href="https://github.com/chamal1120"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-        <a
-          className="text-lg hover:underline"
-          href="mailto:chamal.randika.mcr@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          E-mail
-        </a>
-      </div>
+      <motion.h1
+        className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: [0, 0.71, 0.2, 1.01] },
+        }}
+      >
+        Reach me
+      </motion.h1>
+      <motion.p
+        className="text-fg/70 mb-8 text-lg font-medium"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.08, duration: 0.6, ease: [0, 0.71, 0.2, 1.01] },
+        }}
+      >
+        Open to collaborations and interesting problems.
+      </motion.p>
+      <motion.div
+        className="flex flex-col gap-4"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.12, duration: 0.6, ease: [0, 0.71, 0.2, 1.01] },
+        }}
+      >
+        <ArrowLink href="mailto:chamal.randika.mcr@gmail.com" external>
+          Email · chamal.randika.mcr@gmail.com
+        </ArrowLink>
+        <ArrowLink href="https://github.com/Chamal1120/" external>
+          GitHub · Chamal1120
+        </ArrowLink>
+        <ArrowLink href="https://www.youtube.com/@unixphile" external>
+          YouTube · unixphile
+        </ArrowLink>
+      </motion.div>
     </section>
   );
 }

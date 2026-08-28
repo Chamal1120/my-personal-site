@@ -86,8 +86,8 @@
   --color-white: var(--white);
 
   /* Fonts */
-  --font-sans: var(--font-space-mono), monospace;
-  --font-grotesk: var(--font-space-grotesk), sans-serif;
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
 }
 
 /* ------------------------------
@@ -185,7 +185,7 @@
   border-color: color-mix(in srgb, var(--fg) 12%, transparent);
   border-radius: 0.25rem;
   color: var(--yellow);
-  font-family: var(--font-space-mono), monospace;
+  font-family: var(--font-mono), monospace;
   font-size: 0.85em;
   padding: 0.15rem 0.35rem;
 }
