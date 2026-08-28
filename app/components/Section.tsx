@@ -17,7 +17,14 @@ const Section = ({ title, children }: SectionProps) => (
       <h2 className="text-fg text-lg font-medium">{title}</h2>
       <div className="border-fg/20 flex-grow border-b border-dotted" />
     </motion.div>
-    {children}
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
   </section>
 );
 
