@@ -21,7 +21,7 @@ const ArrowLink = ({
       <span className="ml-0.5 inline-block h-3 w-3 transition-all duration-300 ease-in-out group-hover:translate-x-[2px] group-hover:-translate-y-[2px]">
         <svg
           viewBox="0 0 24 24"
-          className="text-yellow h-full w-full"
+          className="arrow-icon text-yellow h-full w-full"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
