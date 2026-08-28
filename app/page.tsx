@@ -1,46 +1,266 @@
-import * as motion from "motion/react-client";
+"use client";
 
-// Homepage component
+import { useEffect, useState } from "react";
+import * as motion from "motion/react-client";
+import Link from "next/link";
+import { projects } from "./projects/projectsData";
+import { configData } from "./config/configData";
+import ArrowLink from "./components/ArrowLink";
+import Section from "./components/Section";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+
+const EASE: [number, number, number, number] = [0, 0.71, 0.2, 1.01];
+
+const createFade = (delay: number) => ({
+  hidden: { opacity: 0, y: 12, filter: "blur(6px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { delay, duration: 0.7, ease: EASE },
+  },
+});
+
+interface Writing {
+  id: number;
+  title: string;
+  reading_time_minutes: number;
+  slug: string;
+}
+
+const truncate = (str: string, num: number) =>
+  str.length > num ? str.slice(0, num) + "..." : str;
+
 export default function HomePage() {
+  const [writing, setWriting] = useState<Writing[]>([]);
+
+  useEffect(() => {
+    const fetchWriting = async () => {
+      try {
+        const res = await fetch(`/api/devto/articles?per_page=5&page=1`);
+        if (!res.ok) return;
+        const data = (await res.json()) as Writing[];
+        setWriting(data);
+      } catch {
+        /* ignore */
+      }
+    };
+    fetchWriting().catch(console.error);
+  }, []);
+
+  const socials = [
+    { label: "email", href: "mailto:chamal.randika.mcr@gmail.com", title: "Email" },
+    { label: "gh", href: "https://github.com/Chamal1120/", title: "GitHub" },
+    {
+      label: "yt",
+      href: "https://www.youtube.com/@unixphile",
+      title: "YouTube",
+    },
+  ];
+
   return (
-    <section className="flex h-full flex-row flex-wrap items-center justify-center px-5 text-[1.1rem]">
-      <div>
-        {/* <div className="max-w-100"></div> */}
-        <motion.div
-          className="text-justify font-semibold sm:mx-10"
-          initial={{
-            opacity: 0,
-            filter: "blur(8px)",
-            y: 8,
-          }}
-          animate={{
-            opacity: 1,
-            filter: "blur(0px)",
-            y: 0,
-            transition: {
-              delay: 0.2,
-              duration: 1.6,
-              ease: [0, 0.71, 0.2, 1.01],
-            },
-          }}
+    <div>
+      {/* Hero */}
+      <motion.header className="mb-12" initial="hidden" animate="show">
+        <motion.h1
+          variants={createFade(0)}
+          className="text-fg relative mb-2 text-3xl font-semibold tracking-tight md:text-4xl"
         >
-          <p className="cursor-default leading-8 duration-1000 ease-in-out">
-            {`Hello, My name is `}
-            <span className="font-bold">{`Chamal`}</span>
-            <span>
-              . I&apos;m a computer person , open source lover, writer, pc
-              builds enthusiast, gamer and a keyboard nerd.{" "}
-              <span className="bg-yellow text-bg cursor-pointer px-1 py-0 hover:underline">
-                Chamal1120
-              </span>{" "}
-              is the alias I use for online presence (dev work).
+          Chamal1120
+        </motion.h1>
+        <motion.p
+          variants={createFade(0.08)}
+          className="text-fg/70 mb-4 text-lg font-medium"
+        >
+          Computer person · open source lover · writer
+        </motion.p>
+        <motion.nav
+          variants={createFade(0.14)}
+          className="mb-6 flex items-center gap-3 text-sm font-medium"
+        >
+          {socials.map((social, i) => (
+            <span key={social.href} className="flex items-center gap-3">
+              {i > 0 && <span className="text-fg/40">·</span>}
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={social.title}
+                className="text-yellow hover:text-cyan transition-colors"
+              >
+                {social.label}
+              </a>
             </span>
-          </p>
-          <br />
-          <p className="cursor-default duration-1000 ease-in-out">{`I'm interested in systems programming, web dev and ai.`}</p>
-          <br />
-        </motion.div>
-      </div>
-    </section>
+          ))}
+        </motion.nav>
+        <motion.p
+          variants={createFade(0.2)}
+          className="text-fg/80 mb-4 max-w-prose text-base leading-relaxed"
+        >
+          I&apos;m a computer person, open source lover, writer, PC builds
+          enthusiast, gamer and a keyboard nerd focused on systems designing,
+          web dev and agentic automation. I go by the alias {" "} 
+          <span className="text-yellow">Chamal1120</span> online (dev work). 
+        </motion.p>
+        <motion.p variants={createFade(0.26)} className="mb-3">
+          <ArrowLink href="/about">read my full story</ArrowLink>
+        </motion.p>
+      </motion.header>
+
+      {/* Writing */}
+      <Section title="Writing">
+        <div className="space-y-4">
+          {writing.length === 0 ? (
+            <p className="text-fg/50 text-sm">Loading latest writing...</p>
+          ) : (
+            writing.map((post) => (
+              <article
+                key={post.id}
+                className="group flex items-baseline justify-between gap-4"
+              >
+                <Link
+                  href={`/blog/${post.id}`}
+                  className="text-fg hover:underline text-[0.95rem]"
+                >
+                  {truncate(post.title, 60)}
+                </Link>
+                <span className="text-fg/50 shrink-0 font-mono text-sm">
+                  {post.reading_time_minutes} min
+                </span>
+              </article>
+            ))
+          )}
+          <div className="pt-1">
+            <ArrowLink href="/blog">all writing</ArrowLink>
+          </div>
+        </div>
+      </Section>
+
+      {/* Projects */}
+      <Section title="Projects">
+        <div className="space-y-5">
+          {projects.slice(0, 3).map((project) => (
+            <article key={project.slug} className="group">
+              <div className="flex items-baseline justify-between gap-4">
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="text-fg hover:text-yellow font-medium transition-colors"
+                >
+                  {project.title}
+                </Link>
+                <ArrowLink href={project.sourceCodeLink} external>
+                  source
+                </ArrowLink>
+              </div>
+              <p className="text-fg/60 mt-1 text-sm leading-relaxed">
+                {project.description}
+              </p>
+            </article>
+          ))}
+          <div className="pt-1">
+            <ArrowLink href="/projects">all projects</ArrowLink>
+          </div>
+        </div>
+      </Section>
+
+      {/* Things I use */}
+      <Section title="Things I use">
+        <div className="space-y-2">
+          {configData.slice(0, 5).map((item, i) => (
+            <div key={i} className="flex gap-2 text-sm">
+              <span className="text-fg/50 shrink-0 font-mono w-36">
+                {item.label}
+              </span>
+              <span className="text-fg">
+                {item.links
+                  .map((link) => link.text)
+                  .slice(0, 1)
+                  .join(", ")}
+              </span>
+            </div>
+          ))}
+          <div className="pt-2">
+            <ArrowLink href="/config">everything I use</ArrowLink>
+          </div>
+        </div>
+      </Section>
+
+      {/* Experience */}
+      <Section title="Experience">
+        <div className="space-y-4">
+          <div className="flex items-baseline justify-between gap-4">
+            <div>
+              <p className="text-fg font-medium">Engineering Intern · WSO2</p>
+              <p className="text-fg/60 text-sm">
+                Designed, built and delivered agentic automations to the
+                internal patching team.
+              </p>
+            </div>
+            <span className="text-fg/50 shrink-0 font-mono text-sm">
+              Feb — Aug 2026
+            </span>
+          </div>
+          <div className="flex items-baseline justify-between gap-4">
+            <div>
+              <p className="text-fg font-medium">
+                Technical Content Creator · YouTube / Dev.to
+              </p>
+              <p className="text-fg/60 text-sm">
+                Talks and writes about Linux, open source and CLI workflows.
+              </p>
+            </div>
+            <span className="text-fg/50 shrink-0 font-mono text-sm">
+              May 2024 — now
+            </span>
+          </div>
+          <div className="pt-1">
+            <ArrowLink href="/experience">all experience</ArrowLink>
+          </div>
+        </div>
+      </Section>
+
+      {/* Learnings (Education) */}
+      <Section title="Learning">
+        <div className="space-y-3">
+          <div>
+            <p className="text-fg font-medium">
+              BSc. (Hons) in Software Engineering
+            </p>
+            <p className="text-fg/60 font-mono text-sm">
+              SLTC Research University · 2022 — 2026
+            </p>
+          </div>
+          <div>
+            <p className="text-fg font-medium">
+              CS50: Introduction to Computer Science
+            </p>
+            <p className="text-fg/60 font-mono text-sm">
+              Harvard OpenCourseWare · 2024 — 2025
+            </p>
+          </div>
+          <div className="pt-1">
+            <ArrowLink href="/education">all learning</ArrowLink>
+          </div>
+        </div>
+      </Section>
+
+      {/* Contact */}
+      <Section title="Reach me">
+        <p className="text-fg/60 mb-3 text-sm">
+          Open to collaborations, interesting problems and tech talk.
+        </p>
+        <div className="mb-5">
+          <ArrowLink href="mailto:chamal.randika.mcr@gmail.com" external>
+            chamal.randika.mcr@gmail.com
+          </ArrowLink>
+        </div>
+        <ThemeSwitcher />
+      </Section>
+
+      {/* Footer */}
+      <footer className="text-fg/40 border-fg/20 mt-8 border-t border-dotted pt-8 text-center text-sm">
+        built with things I love
+      </footer>
+    </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, createElement, ReactNode } from "react";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
@@ -142,7 +143,7 @@ export default function BlogPostPage() {
 
   if (loading)
     return (
-      <section className="grow px-4 pt-4 sm:px-8">
+      <section className="w-full">
         <div
           role="status"
           className="flex min-h-screen w-full grow items-center justify-center"
@@ -171,24 +172,32 @@ export default function BlogPostPage() {
 
   if (error)
     return (
-      <section className="grow px-4 pt-4 sm:px-8">
+      <section className="w-full">
         <p className="text-red-500">{error}</p>
       </section>
     );
 
   if (!post)
     return (
-      <section className="grow px-4 pt-4 sm:px-8">
+      <section className="w-full">
         <p>Blog post not found.</p>
       </section>
     );
 
   return (
-    <section className="grow px-4 pt-4 sm:px-8">
+    <section className="w-full">
       <div className="w-full">
-        {/** <h1 className="mb-4 text-4xl font-bold">{post.title}</h1> */}
+        <Link
+          href="/blog"
+          className="text-fg/70 hover:text-yellow mb-6 inline-block text-sm hover:underline"
+        >
+          back to writing
+        </Link>
+        <h1 className="text-fg mb-2 text-2xl font-semibold tracking-tight md:text-3xl">
+          {post.title}
+        </h1>
         {post.cover_image && (
-          <div className="mx-auto mb-4 w-full max-w-3xl">
+          <div className="mx-auto mb-4 w-full">
             <Image
               src={post.cover_image}
               alt={post.title}
@@ -199,7 +208,7 @@ export default function BlogPostPage() {
             />
           </div>
         )}
-        <div className="text-fg/70 mb-4 text-[0.8rem]">
+        <div className="text-fg/60 mb-6 font-mono text-sm">
           {post.tags?.map((tag, index) => (
             <span key={index} className="mr-2">
               #{tag}
@@ -207,7 +216,7 @@ export default function BlogPostPage() {
           ))}
         </div>
         {content.length > 0 && (
-          <div className="prose prose-invert max-w-none break-words text-left text-white">
+          <div className="prose prose-invert max-w-none break-words text-left text-fg">
             <style jsx>{`
               div :global(p) {
                 margin-bottom: 1.5rem;

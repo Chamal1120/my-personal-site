@@ -1,25 +1,21 @@
-import { Space_Grotesk, Space_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { type Metadata } from "next";
-import * as motion from "motion/react-client";
-import Footer from ".//components/Footer";
-import MobileView from "./mobileView";
-import Navbar from "./components/Navbar";
 import "./globals.css";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
-});
-
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
+  variable: "--font-inter",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -45,32 +41,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceMono.variable} ${spaceGrotesk.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="bg-bg font-grotesk text-magenta sm:overflow-hidden">
-        <MobileView>{children}</MobileView>
-        <div className="mx-auto hidden h-dvh max-w-screen-2xl flex-col text-center sm:flex sm:flex-row">
-          <motion.div
-            className="border-yellow bg-bg m-2 mr-0 hidden flex-col border-r-2 py-10 sm:flex"
-            initial={{ borderColor: "var(--bg)" }}
-            animate={{ borderColor: "var(--yellow)" }}
-            transition={{ duration: 2 }}
-          >
-            <div className="flex grow flex-col">
-              <Navbar />
-            </div>
-            <div>
-              <Footer />
-            </div>
-          </motion.div>
-          <main className="bg-bg m-2 flex flex-1 grow flex-col overflow-y-auto">
-            {children}
-          </main>
-        </div>
+      <body className="bg-bg font-sans text-fg antialiased">
+        <main className="mx-auto w-full max-w-2xl px-6 py-16 md:py-24">
+          {children}
+        </main>
       </body>
     </html>
   );

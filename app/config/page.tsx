@@ -1,79 +1,63 @@
-import Link from "next/link";
-// import Image from "next/image";
 import * as motion from "motion/react-client";
 import { configData } from "./configData";
-
-// Helper component for rendering links
-const LinkItem = ({ text, href }: { text: string; href: string }) => (
-  <Link className="group" href={href} target="_blank" rel="noopener noreferrer">
-    <span className="group-hover:text-yellow group-hover:underline">
-      {text}
-    </span>
-    <span className="inline-block h-3 w-3 transition-all duration-300 ease-in-out group-hover:translate-x-[3px] group-hover:-translate-y-[3px]">
-      <svg
-        viewBox="0 0 24 24"
-        className="group-hover:text-yellow h-full w-full translate-x-0.5"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6 18L18 6M18 6H10M18 6V14"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </span>
-  </Link>
-);
 
 export default function ConfigPage() {
   return (
     <>
-      <motion.h2
-        className="cursor-default pt-4 pl-4 text-left text-3xl font-bold"
-        initial={{
-          opacity: 0,
-          y: 10,
-        }}
+      <motion.h1
+        className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl"
+        initial={{ opacity: 0, y: 10 }}
         animate={{
           opacity: 1,
           y: 0,
-          transition: { duration: 1, ease: [0, 0.71, 0.2, 1.01] },
+          transition: { duration: 0.6, ease: [0, 0.71, 0.2, 1.01] },
         }}
       >
         Things I use
-      </motion.h2>
-      <div className="flex cursor-default flex-row p-4 text-left">
-        <div>
-          <motion.ul
-            className="flex flex-col gap-2"
-            initial={{
-              opacity: 0,
-              y: 10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1, ease: [0, 0.71, 0.2, 1.01] },
-            }}
-          >
-            {configData.map((item, index) => (
-              <li key={index}>
-                <span className="font-bold">{item.label} - </span>
-                {item.links &&
-                  item.links.map((link, linkIndex) => (
-                    <span key={linkIndex}>
-                      {linkIndex > 0 && <span>, </span>}
-                      <LinkItem text={link.text} href={link.href} />
-                    </span>
-                  ))}
-              </li>
-            ))}
-          </motion.ul>
-        </div>
-      </div>
+      </motion.h1>
+      <motion.p
+        className="text-fg/70 mb-8 text-lg font-medium"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.08, duration: 0.6, ease: [0, 0.71, 0.2, 1.01] },
+        }}
+      >
+        My current setup.
+      </motion.p>
+      <motion.ul
+        className="flex flex-col gap-4"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.12, duration: 0.6, ease: [0, 0.71, 0.2, 1.01] },
+        }}
+      >
+        {configData.map((item, index) => (
+          <li key={index} className="flex gap-3 text-sm">
+            <span className="text-fg/50 shrink-0 font-mono w-40">
+              {item.label}
+            </span>
+            <span className="text-fg">
+              {item.links.map((link, linkIndex) => (
+                <span key={linkIndex}>
+                  {linkIndex > 0 && <span className="text-fg/40">, </span>}
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-yellow hover:underline transition-colors"
+                  >
+                    {link.text}
+                  </a>
+                </span>
+              ))}
+            </span>
+          </li>
+        ))}
+      </motion.ul>
     </>
   );
 }
