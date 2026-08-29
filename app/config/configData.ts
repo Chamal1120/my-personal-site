@@ -24,15 +24,15 @@ export const configData = [
   {
     label: "WM/ Compositor",
     links: [
-      { text: "Yabai (OSX)", href: "https://github.com/koekeishiya/yabai" },
       { text: "Hyprland (Linux)", href: "https://hyprland.org/" },
+      { text: "Yabai (OSX)", href: "https://github.com/koekeishiya/yabai" },
     ],
   },
   {
     label: "Text Editor/ IDE",
     links: [
-      { text: "Vim", href: "https://www.vim.org/" },
       { text: "Neovim", href: "https://neovim.io/" },
+      { text: "Vim", href: "https://www.vim.org/" },
     ],
   },
   {

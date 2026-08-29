@@ -70,7 +70,7 @@ const parseHtmlToReact = (html: string) => {
         return (
           <code
             key={index}
-            className="rounded bg-gray-800 px-1.5 py-0.5 text-sm"
+            className="border-fg/10 rounded border bg-black px-1.5 py-0.5 text-sm text-yellow"
           >
             {element.textContent}
           </code>

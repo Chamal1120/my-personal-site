@@ -10,29 +10,6 @@ interface Role {
 
 const roles: Role[] = [
   {
-    title: "Intern - Engineering (API Manager Team)",
-    org: (
-      <>
-        <a
-          href="https://wso2.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline"
-        >
-          WSO2
-        </a>
-        {" · Colombo, Sri Lanka · On-site"}
-      </>
-    ),
-    period: "Feb 2026 — Aug 2026",
-    bullets: [
-      "Designed and built an AI driven patch analysis agent reaching 75% accuracy in identifying regression scenarios, parsing the patch diff alongside its linked PRs and issue history to surface gaps that existing test suite misses.",
-      "Prototyped an agentic pipeline automating forward and back porting of patches across all the supported product versions.",
-      "Authored a user scenario knowledge base documenting 521 test suite backed + over 2300 past issues based scenarios, enabling agentic retrieval for downstream tooling. (Utilized for patch analysis agent)",
-      "Verified 21 user scenarios during manual release testing for the version 4.7.0 pre-alpha, filing 7 issues.",
-    ],
-  },
-  {
     title: "Technical Content Creator",
     org: (
       <>
@@ -62,6 +39,50 @@ const roles: Role[] = [
       "Record and present technical videos on Unix tooling and open source software on YouTube.",
     ],
   },
+  {
+    title: "Intern - Engineering (API Platform Team)",
+    org: (
+      <>
+        <a
+          href="https://wso2.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          WSO2
+        </a>
+        {" · Colombo, Sri Lanka · On-site"}
+      </>
+    ),
+    period: "Feb 2026 — Aug 2026",
+    bullets: [
+      "Designed and built an AI driven patch analysis agent reaching 75% accuracy in identifying regression scenarios, parsing the patch diff alongside its linked PRs and issue history to surface gaps that existing test suite misses.",
+      "Prototyped an agentic pipeline automating forward and back porting of patches across all the supported product versions.",
+      "Authored a user scenario knowledge base documenting 521 test suite backed + over 2300 past issues based scenarios, enabling agentic retrieval for downstream tooling. (Utilized for patch analysis agent)",
+      "Verified 21 user scenarios during manual release testing for the version 4.7.0 pre-alpha, filing 7 issues.",
+    ],
+  },
+  {
+    title: "Computer Repair Technician",
+    org: "Nex Computer",
+    period: "Dec 2021 — Jan 2022",
+    bullets: [
+      "Diagnosed and repaired software and hardware problems.",
+      "Built, upgraded and set up new computers.",
+      "Visited customers and provided tech support.",
+      "Maintained and updated repair tooling (software).",
+    ],
+  },
+  {
+    title: "Sales Person",
+    org: "Nex Computer",
+    period: "Feb 2020 — Nov 2020",
+    bullets: [
+      "Provided guidance to customers for choosing the best products for their needs.",
+      "Maintained the stock.",
+      "Processed the taking of repairs and handing them back to customers.",
+    ],
+  },
 ];
 
 export default function ExperiencePage() {
@@ -84,7 +105,11 @@ export default function ExperiencePage() {
         animate={{
           opacity: 1,
           y: 0,
-          transition: { delay: 0.08, duration: 0.6, ease: [0, 0.71, 0.2, 1.01] },
+          transition: {
+            delay: 0.08,
+            duration: 0.6,
+            ease: [0, 0.71, 0.2, 1.01],
+          },
         }}
       >
         Where I&apos;ve worked and what I do.
