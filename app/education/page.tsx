@@ -11,8 +11,18 @@ const EducationPage = () => {
     },
     {
       institution: "Harvard OpenCourseWare",
-      course: "CS50: Harvard's Introduction to Computer Science",
+      course: "CS50x: Harvard's Introduction to Computer Science",
       duration: "2024 — 2025 · Self Paced",
+    },
+    {
+      institution: "Maliyadeva College, Kurunegala",
+      course: "GCE A/L, Commerce Stream (English Medium)",
+      duration: "Aug 2016 — Aug 2018",
+    },
+    {
+      institution: "Lakdas De Mel College, Kurunegala",
+      course: "Grade 1 to GCE O/L",
+      duration: "Jan 2005 — Dec 2015",
     },
   ];
 

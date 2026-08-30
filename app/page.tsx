@@ -50,7 +50,11 @@ export default function HomePage() {
   }, []);
 
   const socials = [
-    { label: "em", href: "mailto:chamal.randika.mcr@gmail.com", title: "Email" },
+    {
+      label: "em",
+      href: "mailto:chamal.randika.mcr@gmail.com",
+      title: "Email",
+    },
     { label: "gh", href: "https://github.com/Chamal1120/", title: "GitHub" },
     {
       label: "yt",
@@ -72,9 +76,7 @@ export default function HomePage() {
     const update = () => {
       const root = document.documentElement;
       if (root.dataset.theme) {
-        setEffectiveTheme(
-          root.dataset.theme === "light" ? "light" : "dark",
-        );
+        setEffectiveTheme(root.dataset.theme === "light" ? "light" : "dark");
       } else {
         setEffectiveTheme(
           window.matchMedia("(prefers-color-scheme: light)").matches
@@ -155,8 +157,13 @@ export default function HomePage() {
         >
           I&apos;m a computer person, open source lover, writer, PC builds
           enthusiast, gamer and a keyboard nerd focused on systems designing,
-          web dev and agentic automation. I go by the alias {" "} 
-          <span className="text-yellow"><a href="https://github.com/chamal1120" target="blank">Chamal1120</a></span> online (dev work). 
+          web dev and agentic automation. I go by the alias{" "}
+          <span className="text-yellow">
+            <a href="https://github.com/chamal1120" target="blank">
+              Chamal1120
+            </a>
+          </span>{" "}
+          online (dev work).
         </motion.p>
         <motion.p variants={createFade(0.26)} className="mb-3">
           <ArrowLink href="/about">read my full story</ArrowLink>
@@ -176,7 +183,7 @@ export default function HomePage() {
               >
                 <Link
                   href={`/blog/${post.id}`}
-                  className="text-fg hover:underline text-[0.95rem]"
+                  className="text-fg text-[0.95rem] hover:underline"
                 >
                   {truncate(post.title, 60)}
                 </Link>
@@ -187,7 +194,7 @@ export default function HomePage() {
             ))
           )}
           <div className="pt-1">
-            <ArrowLink href="/blog">all writing</ArrowLink>
+            <ArrowLink href="/blog">all writings</ArrowLink>
           </div>
         </div>
       </Section>
@@ -196,7 +203,7 @@ export default function HomePage() {
       <Section title="Projects">
         <div className="space-y-5">
           {projects.slice(0, 3).map((project) => (
-            <article key={project.slug} className="group">
+            <article key={project.slug}>
               <div className="flex items-baseline justify-between gap-4">
                 <Link
                   href={`/projects/${project.slug}`}
@@ -224,7 +231,7 @@ export default function HomePage() {
         <div className="space-y-2">
           {configData.slice(0, 5).map((item, i) => (
             <div key={i} className="flex gap-2 text-sm">
-              <span className="text-fg/50 shrink-0 font-mono w-36">
+              <span className="text-fg/50 w-36 shrink-0 font-mono">
                 {item.label}
               </span>
               <span className="text-fg">
@@ -251,28 +258,6 @@ export default function HomePage() {
       {/* Experience */}
       <Section title="Experience">
         <div className="space-y-4">
-          <div className="flex items-baseline justify-between gap-4">
-            <div>
-              <p className="text-fg font-medium">
-                Engineering Intern ·{" "}
-                <a
-                  href="https://wso2.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  WSO2
-                </a>
-              </p>
-              <p className="text-fg/60 text-sm">
-                Designed, built and delivered agentic automations to the
-                internal patching team.
-              </p>
-            </div>
-            <span className="text-fg/50 shrink-0 font-mono text-sm">
-              Feb — Aug 2026
-            </span>
-          </div>
           <div className="flex items-baseline justify-between gap-4">
             <div>
               <p className="text-fg font-medium">
@@ -303,8 +288,30 @@ export default function HomePage() {
               May 2024 — now
             </span>
           </div>
+          <div className="flex items-baseline justify-between gap-4">
+            <div>
+              <p className="text-fg font-medium">
+                Engineering Intern ·{" "}
+                <a
+                  href="https://wso2.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  WSO2
+                </a>
+              </p>
+              <p className="text-fg/60 text-sm">
+                Designed, built and delivered agentic automations to the
+                internal patching team.
+              </p>
+            </div>
+            <span className="text-fg/50 shrink-0 font-mono text-sm">
+              Feb — Aug 2026
+            </span>
+          </div>
           <div className="pt-1">
-            <ArrowLink href="/experience">all experience</ArrowLink>
+            <ArrowLink href="/experience">full history</ArrowLink>
           </div>
         </div>
       </Section>
@@ -322,14 +329,14 @@ export default function HomePage() {
           </div>
           <div>
             <p className="text-fg font-medium">
-              CS50: Introduction to Computer Science
+              CS50x: Introduction to Computer Science
             </p>
             <p className="text-fg/60 font-mono text-sm">
               Harvard OpenCourseWare · 2024 — 2025
             </p>
           </div>
           <div className="pt-1">
-            <ArrowLink href="/education">all learning</ArrowLink>
+            <ArrowLink href="/education">full history</ArrowLink>
           </div>
         </div>
       </Section>
@@ -341,7 +348,7 @@ export default function HomePage() {
             href="https://github.com/Chamal1120/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-fg/20 border-bg/50 flex overflow-hidden rounded-lg border bg-bg/50 p-3"
+            className="border-fg/20 border-bg/50 bg-bg/50 flex overflow-hidden rounded-lg border p-3"
           >
             <Image
               src={contributionGraphUrl}
@@ -359,7 +366,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="text-fg/40 border-fg/20 mt-8 flex flex-col items-center gap-4 border-t border-dotted pt-8 text-center text-sm">
         <ThemeSwitcher />
-        built with things I love
+        built with Next.js · inspired by isala.me
       </footer>
     </div>
   );
