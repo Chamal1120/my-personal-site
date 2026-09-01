@@ -6,6 +6,7 @@ import * as motion from "motion/react-client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import BackLink from "../components/BackLink";
 
 // Utility: Truncates a string
 const truncateString = (str: string, num: number) => {
@@ -78,6 +79,7 @@ export default function BlogPage() {
 
   return (
     <section>
+      <BackLink />
       <motion.h1
         className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl"
         initial={{ opacity: 0, y: 10 }}

@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
 import { ReactNode } from "react";
+import BackLink from "../components/BackLink";
 
 interface Role {
   title: string;
@@ -88,6 +89,7 @@ const roles: Role[] = [
 export default function ExperiencePage() {
   return (
     <div>
+      <BackLink />
       <motion.h1
         className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl"
         initial={{ opacity: 0, y: 10 }}
