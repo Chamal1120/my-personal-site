@@ -2,10 +2,12 @@ import Link from "next/link";
 import * as motion from "motion/react-client";
 import ArrowLink from "../components/ArrowLink";
 import { projects } from "./projectsData";
+import BackLink from "../components/BackLink";
 
 export default function ProjectsPage() {
   return (
     <div>
+      <BackLink />
       <motion.h1
         className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl"
         initial={{ opacity: 0, y: 10 }}

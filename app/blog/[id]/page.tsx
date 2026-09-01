@@ -2,7 +2,7 @@
 
 import { useState, useEffect, createElement, ReactNode } from "react";
 import { useParams } from "next/navigation";
-import Link from "next/link";
+import BackLink from "../../components/BackLink";
 import Image from "next/image";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
@@ -187,12 +187,7 @@ export default function BlogPostPage() {
   return (
     <section className="w-full">
       <div className="w-full">
-        <Link
-          href="/blog"
-          className="text-fg/70 hover:text-yellow mb-6 inline-block text-sm hover:underline"
-        >
-          back to writing
-        </Link>
+        <BackLink href="/blog">back to writing</BackLink>
         <h1 className="text-fg mb-2 text-2xl font-semibold tracking-tight md:text-3xl">
           {post.title}
         </h1>

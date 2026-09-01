@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
 import EducationCard from "../components/EducationCard";
+import BackLink from "../components/BackLink";
 
 const EducationPage = () => {
   // List of educationInfo
@@ -28,6 +29,7 @@ const EducationPage = () => {
 
   return (
     <section>
+      <BackLink />
       <motion.h1
         className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl"
         initial={{ opacity: 0, y: 10 }}

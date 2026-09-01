@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown, { type UrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getProjectBySlug } from "../projectsData";
+import BackLink from "../../components/BackLink";
 
 const ONE_WEEK_IN_SECONDS = 60 * 60 * 24 * 7;
 
@@ -131,12 +131,7 @@ export default async function ProjectPage({
 
   return (
     <section className="w-full text-left">
-      <Link
-        href="/projects"
-        className="group text-fg/70 hover:text-yellow mb-6 inline-flex items-center text-sm transition-colors"
-      >
-        <span className="group-hover:underline">back to projects</span>
-      </Link>
+      <BackLink href="/projects">back to projects</BackLink>
       <header className="border-fg/20 mb-8 border-b border-dotted pb-6">
         <h1 className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl">
           {project.title}

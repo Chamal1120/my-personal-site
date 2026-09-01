@@ -1,4 +1,5 @@
 import * as motion from "motion/react-client";
+import BackLink from "../components/BackLink";
 
 const story = [
   `Hey there 👋, So you came here to know what's my story is. Here you go then. It all started when I was in grade 8 when my parents brought a computer home for the first time in our entire family's generation.`,
@@ -22,6 +23,7 @@ const story = [
 export default function AboutPage() {
   return (
     <div>
+      <BackLink />
       <motion.h1
         className="text-fg mb-2 text-3xl font-semibold tracking-tight md:text-4xl"
         initial={{ opacity: 0, y: 10 }}
