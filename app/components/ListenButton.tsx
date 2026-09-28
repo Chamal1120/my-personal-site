@@ -110,7 +110,8 @@ export default function ListenButton({
 
     return (
         <div
-            className="mb-6 inline-flex items-center gap-1 rounded-lg border border-fg/20 bg-bg/50 p-1 text-sm"
+            className="mb-6 inline-flex items-center gap-1 rounded-lg border
+                border-fg/20 bg-bg/50 p-1 text-sm"
             aria-label="Listen to this post"
         >
             {state === "playing" ?

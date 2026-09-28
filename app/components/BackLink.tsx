@@ -14,9 +14,15 @@ export default function BackLink({
     return (
         <Link href={href} className="inline-block">
             <span
-                className={`group mb-6 inline-flex items-center text-sm text-fg/70 transition-colors duration-300 hover:text-yellow ${className}`}
+                className={`group mb-6 inline-flex items-center text-sm
+                    text-fg/70 transition-colors duration-300 hover:text-yellow
+                    ${className}`}
             >
-                <span className="mr-0.5 inline-block h-3 w-3 transition-all duration-300 ease-in-out group-hover:-translate-x-[2px] group-hover:translate-y-[2px]">
+                <span
+                    className="mr-0.5 inline-block h-3 w-3 transition-all
+                        duration-300 ease-in-out group-hover:-translate-x-[2px]
+                        group-hover:translate-y-[2px]"
+                >
                     <svg
                         viewBox="0 0 24 24"
                         className="arrow-icon h-full w-full text-yellow"

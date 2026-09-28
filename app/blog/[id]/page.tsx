@@ -75,7 +75,8 @@ const parseHtmlToReact = (html: string) => {
                 return (
                     <code
                         key={index}
-                        className="rounded border border-fg/10 bg-black px-1.5 py-0.5 text-sm text-yellow"
+                        className="rounded border border-fg/10 bg-black px-1.5
+                            py-0.5 text-sm text-yellow"
                     >
                         {element.textContent}
                     </code>
@@ -170,7 +171,8 @@ export default function BlogPostPage() {
             <section className="w-full">
                 <div
                     role="status"
-                    className="flex min-h-screen w-full grow items-center justify-center"
+                    className="flex min-h-screen w-full grow items-center
+                        justify-center"
                 >
                     <svg
                         aria-hidden="true"
@@ -212,7 +214,10 @@ export default function BlogPostPage() {
         <section className="w-full">
             <div className="w-full">
                 <BackLink href="/blog">back to writing</BackLink>
-                <h1 className="mb-2 text-2xl font-semibold tracking-tight text-fg md:text-3xl">
+                <h1
+                    className="mb-2 text-2xl font-semibold tracking-tight
+                        text-fg md:text-3xl"
+                >
                     {post.title}
                 </h1>
                 {post.cover_image && (
@@ -236,7 +241,10 @@ export default function BlogPostPage() {
                 </div>
                 <ListenButton chunks={speechChunks} />
                 {content.length > 0 && (
-                    <div className="prose prose-invert max-w-none text-left break-words text-fg">
+                    <div
+                        className="prose prose-invert max-w-none text-left
+                            break-words text-fg"
+                    >
                         <style jsx>{`
                             div :global(p) {
                                 margin-bottom: 1.5rem;

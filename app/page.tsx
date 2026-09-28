@@ -129,7 +129,8 @@ export default function HomePage() {
                 <div className="flex flex-row place-content-between">
                     <motion.h1
                         variants={createFade(0)}
-                        className="relative mb-2 text-3xl font-semibold tracking-tight text-fg md:text-4xl"
+                        className="relative mb-2 text-3xl font-semibold
+                            tracking-tight text-fg md:text-4xl"
                     >
                         Chamal1120
                     </motion.h1>
@@ -156,7 +157,8 @@ export default function HomePage() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 title={social.title}
-                                className="social-link text-yellow transition-colors hover:text-cyan"
+                                className="social-link text-yellow
+                                    transition-colors hover:text-cyan"
                             >
                                 {social.label}
                             </a>
@@ -165,7 +167,8 @@ export default function HomePage() {
                 </motion.nav>
                 <motion.p
                     variants={createFade(0.2)}
-                    className="mb-4 max-w-prose text-base leading-relaxed text-fg/80"
+                    className="mb-4 max-w-prose text-base leading-relaxed
+                        text-fg/80"
                 >
                     I&apos;m a computer person, open source lover, writer, PC
                     builds enthusiast, gamer and a keyboard nerd focused on
@@ -193,15 +196,20 @@ export default function HomePage() {
                     :   writing.map((post) => (
                             <article
                                 key={post.id}
-                                className="group flex items-baseline justify-between gap-4"
+                                className="group flex items-baseline
+                                    justify-between gap-4"
                             >
                                 <Link
                                     href={`/blog/${post.id}`}
-                                    className="text-[0.95rem] text-fg hover:underline"
+                                    className="text-[0.95rem] text-fg
+                                        hover:underline"
                                 >
                                     {truncate(post.title, 60)}
                                 </Link>
-                                <span className="shrink-0 font-mono text-sm text-fg/50">
+                                <span
+                                    className="shrink-0 font-mono text-sm
+                                        text-fg/50"
+                                >
                                     {post.reading_time_minutes} min
                                 </span>
                             </article>
@@ -218,10 +226,14 @@ export default function HomePage() {
                 <div className="space-y-5">
                     {projects.slice(0, 3).map((project) => (
                         <article key={project.slug}>
-                            <div className="flex items-baseline justify-between gap-4">
+                            <div
+                                className="flex items-baseline justify-between
+                                    gap-4"
+                            >
                                 <Link
                                     href={`/projects/${project.slug}`}
-                                    className="font-medium text-fg transition-colors hover:text-yellow"
+                                    className="font-medium text-fg
+                                        transition-colors hover:text-yellow"
                                 >
                                     {project.title}
                                 </Link>
@@ -232,7 +244,10 @@ export default function HomePage() {
                                     source
                                 </ArrowLink>
                             </div>
-                            <p className="mt-1 text-sm leading-relaxed text-fg/60">
+                            <p
+                                className="mt-1 text-sm leading-relaxed
+                                    text-fg/60"
+                            >
                                 {project.description}
                             </p>
                         </article>
@@ -360,13 +375,14 @@ export default function HomePage() {
             </Section>
 
             {/* GitHub Activity */}
-            <Section title="GitHub Activity">
+            {/* <Section title="GitHub Activity">
                 <div className="flex flex-col items-stretch gap-4">
                     <a
                         href="https://github.com/Chamal1120/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex overflow-hidden rounded-lg border border-bg/50 bg-bg/50 p-3"
+                        className="flex overflow-hidden rounded-lg border
+                            border-bg/50 bg-bg/50 p-3"
                     >
                         <Image
                             src={contributionGraphUrl}
@@ -379,11 +395,27 @@ export default function HomePage() {
                         />
                     </a>
                 </div>
-            </Section>
+            </Section> */}
 
             {/* Footer */}
-            <footer className="mt-8 flex flex-col items-center gap-4 border-t border-dotted border-fg/20 pt-8 text-center text-sm text-fg/40">
-                built with Next.js · inspired by isala.me
+            <footer
+                className="mt-8 flex flex-row justify-center items-center gap-2
+                    border-t border-dotted border-fg/20 pt-8 text-center text-sm
+                    text-fg/40"
+            >
+                <span>built with Next.js</span>
+                <span>.</span>
+                <span>
+                    inspired by{" "}
+                    <Link
+                        href="https://isala.me"
+                        target="blank"
+                        className="md:hover:underline underline-offset-4 decoration-[0.2px]
+                            decoration-zinc-500"
+                    >
+                        isala.me
+                    </Link>
+                </span>
             </footer>
         </div>
     )

@@ -81,7 +81,8 @@ export default function BlogPage() {
         <section>
             <BackLink />
             <motion.h1
-                className="mb-2 text-3xl font-semibold tracking-tight text-fg md:text-4xl"
+                className="mb-2 text-3xl font-semibold tracking-tight text-fg
+                    md:text-4xl"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{
                     opacity: 1,
@@ -114,7 +115,8 @@ export default function BlogPage() {
                     {posts.map((post, i) => (
                         <motion.article
                             key={post.id}
-                            className="flex items-baseline justify-between gap-4"
+                            className="flex items-baseline justify-between
+                                gap-4"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{
                                 opacity: 1,
@@ -128,11 +130,15 @@ export default function BlogPage() {
                         >
                             <Link
                                 href={`/blog/${post.id}`}
-                                className="text-[0.95rem] text-fg hover:underline"
+                                className="text-[0.95rem] text-fg
+                                    hover:underline"
                             >
                                 {truncateString(post.title, 70)}
                             </Link>
-                            <span className="shrink-0 font-mono text-sm text-fg/50">
+                            <span
+                                className="shrink-0 font-mono text-sm
+                                    text-fg/50"
+                            >
                                 {post.reading_time_minutes} min
                             </span>
                         </motion.article>
@@ -167,7 +173,9 @@ export default function BlogPage() {
                 <button
                     onClick={() => changePage(Math.max(page - 1, 1))}
                     disabled={page === 1}
-                    className="cursor-pointer rounded-full px-2.5 py-2 text-fg/60 transition duration-150 ease-in-out hover:text-yellow active:scale-90 disabled:text-fg/20"
+                    className="cursor-pointer rounded-full px-2.5 py-2
+                        text-fg/60 transition duration-150 ease-in-out
+                        hover:text-yellow active:scale-90 disabled:text-fg/20"
                 >
                     <FontAwesomeIcon icon={faAngleLeft} />
                 </button>
@@ -177,7 +185,9 @@ export default function BlogPage() {
                 <button
                     onClick={() => changePage(page + 1)}
                     disabled={posts.length < 10}
-                    className="cursor-pointer rounded-full px-2.5 py-2 text-fg/60 hover:text-yellow active:scale-90 disabled:text-fg/20"
+                    className="cursor-pointer rounded-full px-2.5 py-2
+                        text-fg/60 hover:text-yellow active:scale-90
+                        disabled:text-fg/20"
                 >
                     <FontAwesomeIcon icon={faAngleRight} />
                 </button>

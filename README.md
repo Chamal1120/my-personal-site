@@ -20,10 +20,8 @@ My attempt at creating a minimal, fast and responsive personal site.
 - [Dev.to](https://dev.to)
 - [Vercel](https://vercel.com)
 
-## Dev.to cache
-
-Dev.to article lists and article details are cached by Next.js for seven days.
-Set these environment variables locally and in Vercel:
+## Dev.to articles
+Articles uses a cache also. Set these environment variables locally and in Vercel:
 
 ```env
 DEVTO_USERNAME=<your-username>

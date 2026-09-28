@@ -9,7 +9,8 @@ export default function ProjectsPage() {
         <div>
             <BackLink />
             <motion.h1
-                className="mb-2 text-3xl font-semibold tracking-tight text-fg md:text-4xl"
+                className="mb-2 text-3xl font-semibold tracking-tight text-fg
+                    md:text-4xl"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{
                     opacity: 1,
@@ -49,10 +50,14 @@ export default function ProjectsPage() {
                             },
                         }}
                     >
-                        <div className="flex items-baseline justify-between gap-4">
+                        <div
+                            className="flex items-baseline justify-between
+                                gap-4"
+                        >
                             <Link
                                 href={`/projects/${project.slug}`}
-                                className="font-medium text-fg transition-colors hover:text-yellow"
+                                className="font-medium text-fg transition-colors
+                                    hover:text-yellow"
                             >
                                 {project.title}
                             </Link>

@@ -91,7 +91,8 @@ export default function ExperiencePage() {
         <div>
             <BackLink />
             <motion.h1
-                className="mb-2 text-3xl font-semibold tracking-tight text-fg md:text-4xl"
+                className="mb-2 text-3xl font-semibold tracking-tight text-fg
+                    md:text-4xl"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{
                     opacity: 1,
@@ -120,7 +121,8 @@ export default function ExperiencePage() {
                 {roles.map((role, i) => (
                     <motion.div
                         key={role.title}
-                        className="border-b border-dotted border-fg/20 py-6 last:border-b-0"
+                        className="border-b border-dotted border-fg/20 py-6
+                            last:border-b-0"
                         initial={{ opacity: 0, y: 12 }}
                         animate={{
                             opacity: 1,
@@ -133,11 +135,17 @@ export default function ExperiencePage() {
                         }}
                     >
                         <div className="flex flex-col gap-0.5">
-                            <div className="flex flex-wrap items-baseline justify-between gap-2">
+                            <div
+                                className="flex flex-wrap items-baseline
+                                    justify-between gap-2"
+                            >
                                 <span className="font-medium text-fg">
                                     {role.title}
                                 </span>
-                                <span className="shrink-0 font-mono text-sm text-fg/50">
+                                <span
+                                    className="shrink-0 font-mono text-sm
+                                        text-fg/50"
+                                >
                                     {role.period}
                                 </span>
                             </div>
@@ -145,7 +153,10 @@ export default function ExperiencePage() {
                                 {role.org}
                             </span>
                         </div>
-                        <ul className="mt-3 list-disc space-y-2 pl-4 text-sm leading-relaxed text-fg/70">
+                        <ul
+                            className="mt-3 list-disc space-y-2 pl-4 text-sm
+                                leading-relaxed text-fg/70"
+                        >
                             {role.bullets.map((bullet, j) => (
                                 <li key={j}>{bullet}</li>
                             ))}

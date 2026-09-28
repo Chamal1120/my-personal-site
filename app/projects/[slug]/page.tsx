@@ -136,7 +136,10 @@ export default async function ProjectPage({
         <section className="w-full text-left">
             <BackLink href="/projects">back to projects</BackLink>
             <header className="mb-8 border-b border-dotted border-fg/20 pb-6">
-                <h1 className="mb-2 text-3xl font-semibold tracking-tight text-fg md:text-4xl">
+                <h1
+                    className="mb-2 text-3xl font-semibold tracking-tight
+                        text-fg md:text-4xl"
+                >
                     {project.title}
                 </h1>
                 <p className="mt-3 text-fg/70">{project.description}</p>
@@ -144,7 +147,8 @@ export default async function ProjectPage({
                     href={project.sourceCodeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-block text-sm text-yellow transition-colors hover:text-cyan hover:underline"
+                    className="mt-4 inline-block text-sm text-yellow
+                        transition-colors hover:text-cyan hover:underline"
                 >
                     View source code
                 </a>

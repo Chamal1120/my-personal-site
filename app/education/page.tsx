@@ -31,7 +31,8 @@ export default function EducationPage() {
         <section>
             <BackLink />
             <motion.h1
-                className="mb-2 text-3xl font-semibold tracking-tight text-fg md:text-4xl"
+                className="mb-2 text-3xl font-semibold tracking-tight text-fg
+                    md:text-4xl"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{
                     opacity: 1,

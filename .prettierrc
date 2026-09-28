@@ -1,10 +1,11 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-classnames"],
   "tailwindStylesheet": "./app/globals.css",
   "trailingComma": "es5",
   "tabWidth": 4,
   "semi": false,
   "singleQuote": false,
-  "experimentalTernaries": true
-}
+  "experimentalTernaries": true,
+  "printWidth": 80
+} 
 

@@ -60,7 +60,8 @@ export default function ThemeSwitcher() {
 
     return (
         <motion.div
-            className="inline-flex items-center gap-1 rounded-lg border border-fg/20 bg-bg/50 p-1 text-sm"
+            className="inline-flex items-center gap-1 rounded-lg border
+                border-fg/20 bg-bg/50 p-1 text-sm"
             aria-label="Theme preference"
             initial={{ opacity: 0, filter: "blur(10px)", y: -2 }}
             animate={{
@@ -82,7 +83,9 @@ export default function ThemeSwitcher() {
                         key={option.value}
                         type="button"
                         onClick={() => applyTheme(option.value)}
-                        className={`inline-flex h-8 w-8 items-center justify-center rounded-md transition-colors duration-200 ${
+                        className={`inline-flex h-8 w-8 items-center
+                        justify-center rounded-md transition-colors duration-200
+                        ${
                             isActive ? "bg-yellow text-bg" : (
                                 "text-magenta hover:bg-fg/10 hover:text-yellow"
                             )

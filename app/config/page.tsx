@@ -7,7 +7,8 @@ export default function ConfigPage() {
         <>
             <BackLink />
             <motion.h1
-                className="mb-2 text-3xl font-semibold tracking-tight text-fg md:text-4xl"
+                className="mb-2 text-3xl font-semibold tracking-tight text-fg
+                    md:text-4xl"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{
                     opacity: 1,
@@ -60,7 +61,8 @@ export default function ConfigPage() {
                                         href={link.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="transition-colors hover:text-yellow hover:underline"
+                                        className="transition-colors
+                                            hover:text-yellow hover:underline"
                                     >
                                         {link.text}
                                     </a>

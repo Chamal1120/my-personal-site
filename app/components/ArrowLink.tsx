@@ -15,10 +15,15 @@ export default function ArrowLink({
 }: ArrowLinkProps) {
     const content = (
         <span
-            className={`group inline-flex items-center text-sm text-fg/70 transition-colors duration-300 hover:text-yellow ${className}`}
+            className={`group inline-flex items-center text-sm text-fg/70
+                transition-colors duration-300 hover:text-yellow ${className}`}
         >
             <span className="group-hover:underline">{children}</span>
-            <span className="ml-0.5 inline-block h-3 w-3 transition-all duration-300 ease-in-out group-hover:translate-x-[2px] group-hover:-translate-y-[2px]">
+            <span
+                className="ml-0.5 inline-block h-3 w-3 transition-all
+                    duration-300 ease-in-out group-hover:translate-x-[2px]
+                    group-hover:-translate-y-[2px]"
+            >
                 <svg
                     viewBox="0 0 24 24"
                     className="arrow-icon h-full w-full text-yellow"
