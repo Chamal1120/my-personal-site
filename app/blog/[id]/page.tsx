@@ -242,8 +242,7 @@ export default function BlogPostPage() {
                 <ListenButton chunks={speechChunks} />
                 {content.length > 0 && (
                     <div
-                        className="prose prose-invert max-w-none text-left
-                            break-words text-fg"
+                        className="prose prose-invert max-w-none text-left break-words text-fg"
                     >
                         <style jsx>{`
                             div :global(p) {
