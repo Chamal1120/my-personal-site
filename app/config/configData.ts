@@ -2,8 +2,7 @@ export const configData = [
     {
         label: "OSes",
         links: [
-            { text: "Arch Linux", href: "https://archlinux.org/" },
-            { text: "MacOS", href: "https://www.apple.com/macos/" },
+            { text: "Anything Unix-like", href: "" },
         ],
     },
     {
@@ -17,6 +16,10 @@ export const configData = [
                 text: "Jetbrains Mono",
                 href: "https://www.jetbrains.com/lp/mono/",
             },
+            {
+                text: "Caskaydia Cove",
+                href: "",
+            },
         ],
     },
     {
@@ -27,6 +30,7 @@ export const configData = [
         label: "WM/ Compositor",
         links: [
             { text: "Hyprland (Linux)", href: "https://hyprland.org/" },
+            { text: "Mutter", href: "" },
             {
                 text: "Yabai (OSX)",
                 href: "https://github.com/koekeishiya/yabai",
@@ -37,7 +41,6 @@ export const configData = [
         label: "Text Editor/ IDE",
         links: [
             { text: "Neovim", href: "https://neovim.io/" },
-            { text: "Vim", href: "https://www.vim.org/" },
         ],
     },
     {
@@ -52,9 +55,9 @@ export const configData = [
     {
         label: "Dotfiles",
         links: [
-            { text: "Linux", href: "https://github.com/Chamal1120/dotfiles" },
+            { text: "Linux (new one WIP)", href: "" },
             {
-                text: "MacOS",
+                text: "MacOS (depricated)",
                 href: "https://github.com/Chamal1120/dotfiles-mac",
             },
         ],
